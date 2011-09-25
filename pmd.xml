@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="4.2.5" timestamp="2011-09-25T10:06:41.919">
+<file name="C:\play\greenmail-maven-plugin\src\main\java\com\btmatthews\maven\plugins\greenmail\mojo\Monitor.java">
+<violation beginline="43" endline="43" begincolumn="49" endcolumn="59" rule="AvoidUsingHardCodedIP" ruleset="Basic Rules" package="com.btmatthews.maven.plugins.greenmail.mojo" class="Monitor" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#AvoidUsingHardCodedIP" priority="3">
+Do not hard code IPv4 or IPv6 addresses, even 127.0.0.1 !
+</violation>
+</file>
+</pmd>
