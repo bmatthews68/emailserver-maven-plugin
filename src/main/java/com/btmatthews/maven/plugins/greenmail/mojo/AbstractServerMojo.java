@@ -27,7 +27,7 @@ import org.apache.maven.plugin.AbstractMojo;
 public abstract class AbstractServerMojo extends AbstractMojo implements Logger {
 
 	/**
-	 * The port to listen on for the stop command.
+	 * The port to listen on for the monitor commands.
 	 * 
 	 * @parameter expression="${greenmail.monitor.port}"
 	 * @required
@@ -35,7 +35,7 @@ public abstract class AbstractServerMojo extends AbstractMojo implements Logger 
 	private int monitorPort;
 
 	/**
-	 * Key to provide when stopping the GreenMail server.
+	 * Key to provide when sending commands to the GreenMail server.
 	 * 
 	 * @parameter expression="${greenmail.monitor.key}"
 	 * @required
