@@ -16,6 +16,8 @@
 
 package com.btmatthews.maven.plugins.greenmail.mojo;
 
+import com.btmatthews.utils.monitor.Logger;
+import com.btmatthews.utils.monitor.Server;
 import com.icegreen.greenmail.util.GreenMail;
 
 /**

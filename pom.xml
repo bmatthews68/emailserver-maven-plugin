@@ -65,15 +65,6 @@
 					<useJava5>true</useJava5>
 					<goalPrefix>greenmail</goalPrefix>
 				</configuration>
-				<executions>
-					<execution>
-						<id>exec-plugin-doc</id>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>xdoc</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 			<plugin>
 				<artifactId>maven-source-plugin</artifactId>
@@ -189,6 +180,11 @@
 	</reporting>
 	<dependencies>
 		<dependency>
+			<groupId>com.btmatthews.utils</groupId>
+			<artifactId>monitor</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
 			<groupId>org.apache.maven</groupId>
 			<artifactId>maven-plugin-api</artifactId>
 			<version>3.0.3</version>
@@ -208,6 +204,7 @@
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-core</artifactId>
 			<version>1.8.5</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>

@@ -18,6 +18,8 @@ package com.btmatthews.maven.plugins.greenmail.mojo;
 
 import org.apache.maven.plugin.AbstractMojo;
 
+import com.btmatthews.utils.monitor.Logger;
+
 /**
  * Abstract base class for the Mojos in the plug-in.
  * 

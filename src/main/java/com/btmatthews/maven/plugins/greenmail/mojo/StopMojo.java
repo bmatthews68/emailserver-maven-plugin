@@ -19,6 +19,8 @@ package com.btmatthews.maven.plugins.greenmail.mojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
 
+import com.btmatthews.utils.monitor.Monitor;
+
 /**
  * Stop the GreenMail mail servers.
  * 
