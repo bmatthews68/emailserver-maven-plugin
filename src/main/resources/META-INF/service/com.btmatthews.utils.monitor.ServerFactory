@@ -1,0 +1,3 @@
+com.btmatthews.maven.plugins.emailserver.greenmail.GreenmailMailServerFactory
+com.btmatthews.maven.plugins.emailserver.dumbster.DumbsterMailServerFactory
+com.btmatthews.maven.plugins.emailserver.subethasmtp.SubEthaSMTPMailServerFactory
