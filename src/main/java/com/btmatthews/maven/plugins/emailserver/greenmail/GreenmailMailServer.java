@@ -35,18 +35,11 @@ public class GreenmailMailServer implements Server {
     private GreenMail greenMail;
 
     /**
-     * The constructor initialises {@link #greenMail} with the default
-     * configuration.
-     */
-    public GreenmailMailServer() {
-	greenMail = new GreenMail();
-    }
-
-    /**
      * Start the GreenMail mail servers.
      */
     public void start(final Logger logger) {
 	logger.logInfo("Starting mail servers...");
+	greenMail = new GreenMail();
 	greenMail.start();
 	logger.logInfo("Started mail servers");
     }
@@ -56,7 +49,10 @@ public class GreenmailMailServer implements Server {
      */
     public void stop(final Logger logger) {
 	logger.logInfo("Stopping mail servers...");
-	greenMail.stop();
+	if (greenMail != null) {
+	    greenMail.stop();
+	    greenMail = null;
+	}
 	logger.logInfo("Stopped mail servers");
     }
 }
