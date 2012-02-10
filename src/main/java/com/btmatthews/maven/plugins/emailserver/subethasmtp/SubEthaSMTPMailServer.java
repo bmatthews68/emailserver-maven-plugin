@@ -19,17 +19,17 @@ package com.btmatthews.maven.plugins.emailserver.subethasmtp;
 import org.subethamail.smtp.MessageHandlerFactory;
 import org.subethamail.smtp.server.SMTPServer;
 
+import com.btmatthews.maven.plugins.emailserver.AbstractMailServer;
 import com.btmatthews.utils.monitor.Logger;
-import com.btmatthews.utils.monitor.Server;
 
 /**
- * Encapsulates the SubEtha SMTP server allowing it to be controlled by a
- * monitor.
+ * Encapsulates the <a href="http://code.google.com/p/subethasmtp/">SubEtha
+ * SMTP</a> server allowing it to be controlled by a monitor.
  * 
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0
  */
-public class SubEthaSMTPMailServer implements Server {
+public class SubEthaSMTPMailServer extends AbstractMailServer {
 
     /**
      * Used to control the SubEtha SMTP server.
@@ -43,7 +43,12 @@ public class SubEthaSMTPMailServer implements Server {
 	logger.logInfo("Starting SubEtha SMTP server...");
 	final MessageHandlerFactory messageHandlerFactory = new SimpleMessageHandlerFactory();
 	server = new SMTPServer(messageHandlerFactory);
-	server.setPort(25);
+	if (isUseSSL()) {
+	    server.setPort(DEFAULT_SMTPS_PORT + getPortOffset());
+	} else {
+	    server.setPort(DEFAULT_SMTP_PORT + getPortOffset());
+	}
+	server.setEnableTLS(isUseSSL());
 	server.start();
 	logger.logInfo("Started SubEtha SMTP server");
     }

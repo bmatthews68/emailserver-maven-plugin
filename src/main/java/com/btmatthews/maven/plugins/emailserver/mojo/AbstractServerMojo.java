@@ -28,77 +28,77 @@ import com.btmatthews.utils.monitor.Logger;
  */
 public abstract class AbstractServerMojo extends AbstractMojo implements Logger {
 
-	/**
-	 * The port to listen on for the monitor commands.
-	 * 
-	 * @parameter expression="${greenmail.monitor.port}"
-	 * @required
-	 */
-	private int monitorPort;
+    /**
+     * The port to listen on for the monitor commands.
+     * 
+     * @parameter expression="${greenmail.monitor.port}"
+     * @required
+     */
+    private int monitorPort;
 
-	/**
-	 * Key to provide when sending commands to the GreenMail server.
-	 * 
-	 * @parameter expression="${greenmail.monitor.key}"
-	 * @required
-	 */
-	private String monitorKey;
+    /**
+     * Key to provide when sending commands to the GreenMail server.
+     * 
+     * @parameter expression="${greenmail.monitor.key}"
+     * @required
+     */
+    private String monitorKey;
 
-	/**
-	 * The default constructor is protected because this is an abstract base
-	 * class.
-	 */
-	protected AbstractServerMojo() {
-	}
+    /**
+     * The default constructor is protected because this is an abstract base
+     * class.
+     */
+    protected AbstractServerMojo() {
+    }
 
-	/**
-	 * Get the port number on which the monitor is listening.
-	 * 
-	 * @return The port number.
-	 */
-	protected final int getMonitorPort() {
-		return monitorPort;
-	}
+    /**
+     * Get the port number on which the monitor is listening.
+     * 
+     * @return The port number.
+     */
+    protected final int getMonitorPort() {
+	return monitorPort;
+    }
 
-	/**
-	 * Get the key used to prefix monitor commands.
-	 * 
-	 * @return The key.
-	 */
-	protected final String getMonitorKey() {
-		return monitorKey;
-	}
+    /**
+     * Get the key used to prefix monitor commands.
+     * 
+     * @return The key.
+     */
+    protected final String getMonitorKey() {
+	return monitorKey;
+    }
 
-	/**
-	 * Write an informational message to the plug-in log file.
-	 * 
-	 * @param message
-	 *            The message to be logged.
-	 */
-	public void logInfo(final String message) {
-		getLog().info(message);
-	}
+    /**
+     * Write an informational message to the plug-in log file.
+     * 
+     * @param message
+     *            The message to be logged.
+     */
+    public void logInfo(final String message) {
+	getLog().info(message);
+    }
 
-	/**
-	 * Write an error message to the plug-in log file.
-	 * 
-	 * @param message
-	 *            The message to be logged.
-	 */
-	public void logError(final String message) {
-		getLog().error(message);
-	}
+    /**
+     * Write an error message to the plug-in log file.
+     * 
+     * @param message
+     *            The message to be logged.
+     */
+    public void logError(final String message) {
+	getLog().error(message);
+    }
 
-	/**
-	 * Write an error message to the plug-in log file.
-	 * 
-	 * @param message
-	 *            The message to be logged.
-	 * @param cause
-	 *            The exception that caused the message to be logged.
-	 */
-	public void logError(final String message, final Throwable cause) {
-		getLog().error(message, cause);
-	}
+    /**
+     * Write an error message to the plug-in log file.
+     * 
+     * @param message
+     *            The message to be logged.
+     * @param cause
+     *            The exception that caused the message to be logged.
+     */
+    public void logError(final String message, final Throwable cause) {
+	getLog().error(message, cause);
+    }
 
 }

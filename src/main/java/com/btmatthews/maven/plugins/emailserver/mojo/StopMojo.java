@@ -1,5 +1,5 @@
 /*
- * Copyright 2011 Brian Matthews
+ * Copyright 2011-2012 Brian Matthews
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,13 +16,12 @@
 
 package com.btmatthews.maven.plugins.emailserver.mojo;
 
-import org.apache.maven.plugin.MojoExecutionException;
-import org.apache.maven.plugin.MojoFailureException;
+import org.apache.maven.plugin.Mojo;
 
 import com.btmatthews.utils.monitor.Monitor;
 
 /**
- * Stop the GreenMail mail servers.
+ * Stop the email server(s).
  * 
  * @goal stop
  * 
@@ -31,21 +30,20 @@ import com.btmatthews.utils.monitor.Monitor;
  */
 public class StopMojo extends AbstractServerMojo {
 
-	/**
-	 * The default constructor.
-	 */
-	public StopMojo() {
-	}
+    /**
+     * The default constructor.
+     */
+    public StopMojo() {
+    }
 
-	/**
-	 * Issue a stop command to the monitor in order to shutdown the GreenMail
-	 * mail servers.
-	 * 
-	 * @throws MojoExecutionException
-	 * @throws MojoFailureException
-	 */
-	public void execute() throws MojoExecutionException, MojoFailureException {
-		final Monitor monitor = new Monitor(getMonitorKey(), getMonitorPort());
-		monitor.sendCommand("stop", this);
-	}
+    /**
+     * Issue a stop command to the monitor in order to shutdown the email
+     * server(s).
+     * 
+     * @see Mojo#execute()
+     */
+    public void execute() {
+	final Monitor monitor = new Monitor(getMonitorKey(), getMonitorPort());
+	monitor.sendCommand("stop", this);
+    }
 }

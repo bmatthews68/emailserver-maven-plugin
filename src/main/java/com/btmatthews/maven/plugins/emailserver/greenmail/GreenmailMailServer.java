@@ -16,9 +16,11 @@
 
 package com.btmatthews.maven.plugins.emailserver.greenmail;
 
+import com.btmatthews.maven.plugins.emailserver.AbstractMailServer;
 import com.btmatthews.utils.monitor.Logger;
-import com.btmatthews.utils.monitor.Server;
 import com.icegreen.greenmail.util.GreenMail;
+import com.icegreen.greenmail.util.ServerSetup;
+import com.icegreen.greenmail.util.ServerSetupTest;
 
 /**
  * Encapsulates the GreenMail mail servers allowing them to be controlled by a
@@ -27,7 +29,7 @@ import com.icegreen.greenmail.util.GreenMail;
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0
  */
-public class GreenmailMailServer implements Server {
+public class GreenmailMailServer extends AbstractMailServer {
 
     /**
      * Used to control the GreenMail mail servers.
@@ -39,7 +41,22 @@ public class GreenmailMailServer implements Server {
      */
     public void start(final Logger logger) {
 	logger.logInfo("Starting mail servers...");
-	greenMail = new GreenMail();
+	ServerSetup[] serverSetups;
+	if (getPortOffset() != 0) {
+	    ServerSetupTest.setPortOffset(getPortOffset());
+	    if (isUseSSL()) {
+		serverSetups = ServerSetupTest.SMTPS_POP3S_IMAPS;
+	    } else {
+		serverSetups = ServerSetupTest.SMTP_POP3_IMAP;
+	    }
+	} else {
+	    if (isUseSSL()) {
+		serverSetups = ServerSetup.SMTPS_POP3S_IMAPS;
+	    } else {
+		serverSetups = ServerSetup.SMTP_POP3_IMAP;
+	    }
+	}
+	greenMail = new GreenMail(serverSetups);
 	greenMail.start();
 	logger.logInfo("Started mail servers");
     }

@@ -16,16 +16,13 @@
 
 package com.btmatthews.maven.plugins.emailserver.mojo;
 
-import org.apache.maven.plugin.MojoExecutionException;
-import org.apache.maven.plugin.MojoFailureException;
-
+import com.btmatthews.maven.plugins.emailserver.MailServer;
 import com.btmatthews.utils.monitor.Monitor;
-import com.btmatthews.utils.monitor.Server;
 import com.btmatthews.utils.monitor.ServerFactory;
 import com.btmatthews.utils.monitor.ServerFactoryLocator;
 
 /**
- * Run the mail servers.
+ * Run the mail server(s).
  * 
  * @goal run
  * @execute phase="test-compile"
@@ -47,22 +44,34 @@ public class RunMojo extends AbstractServerMojo {
     private String serverName;
 
     /**
+     * @parameter expression="${emailserver.portOffset}"
+     *            default-value="0"
+     */
+    private int portOffset;
+
+    /**
+     * @parameter expression="${emailserver.portOffset}"
+     *            default-value="false"
+     */
+    private boolean useSSL;
+
+    /**
      * The default constructor.
      */
     public RunMojo() {
     }
 
     /**
-     * Execute the Mojo by launching the GreenMail server and waiting for the
-     * stop command.
-     * 
-     * @throws MojoExecutionException
-     * @throws MojoFailureExeption
+     * Execute the Mojo by launching the email servers and waiting for the stop
+     * command. If the server daemon option is set the email servers are spun
+     * off in a background thread.
      */
-    public void execute() throws MojoExecutionException, MojoFailureException {
+    public void execute() {
 	final Monitor monitor = new Monitor(getMonitorKey(), getMonitorPort());
-	final Server server = createServer();
+	final MailServer server = createServer();
 	if (server != null) {
+	    server.setPortOffset(portOffset);
+	    server.setUseSSL(useSSL);
 	    server.start(this);
 	    if (daemon) {
 		new Thread(new Runnable() {
@@ -77,19 +86,20 @@ public class RunMojo extends AbstractServerMojo {
     }
 
     /**
-     * Create the mail server using the {@link ServerFactory} registered under
-     * the alias matched by {@link serverName}. 
+     * Create the mail server(s) using the {@link ServerFactory} registered
+     * under the alias matched by {@link serverName}.
      * 
-     * @return
+     * @return The server object that starts and stops the mail server(s).
      */
-    private Server createServer() {
-	final ServerFactoryLocator locator = ServerFactoryLocator.getInstance(this);
+    private MailServer createServer() {
+	final ServerFactoryLocator locator = ServerFactoryLocator
+		.getInstance(this);
 	final ServerFactory factory = locator.getFactory(serverName);
-	Server server;
+	MailServer server;
 	if (factory == null) {
 	    server = null;
 	} else {
-	    server = factory.createServer();
+	    server = (MailServer)factory.createServer();
 	}
 	return server;
     }

@@ -16,30 +16,31 @@
 
 package com.btmatthews.maven.plugins.emailserver.dumbster;
 
+import com.btmatthews.maven.plugins.emailserver.AbstractMailServer;
+import com.btmatthews.maven.plugins.emailserver.MailServer;
 import com.btmatthews.utils.monitor.Logger;
-import com.btmatthews.utils.monitor.Server;
 import com.dumbster.smtp.SimpleSmtpServer;
 
 /**
- * Encapsulates the Dumbster fake SMTP server allowing it to be controlled by a
- * monitor.
+ * Encapsulates the <a href="http://quintanasoft.com/dumbster/">Dumbster</a>
+ * fake SMTP server allowing it to be controlled by a monitor.
  * 
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0
  */
-public class DumbsterMailServer implements Server {
+public class DumbsterMailServer extends AbstractMailServer {
 
     /**
      * Used to control the Dumbster fake SMTP server.
      */
-    private SimpleSmtpServer server;
+    protected SimpleSmtpServer server;
 
     /**
      * Start the GreenMail mail servers.
      */
     public void start(final Logger logger) {
 	logger.logInfo("Starting Dumbster fake SMTP server...");
-	server = SimpleSmtpServer.start();
+	server = SimpleSmtpServer.start(DEFAULT_SMTP_PORT + getPortOffset());
 	logger.logInfo("Started Dumbster fake SMTP server");
     }
 
