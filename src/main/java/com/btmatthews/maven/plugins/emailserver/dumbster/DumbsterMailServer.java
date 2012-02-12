@@ -17,7 +17,6 @@
 package com.btmatthews.maven.plugins.emailserver.dumbster;
 
 import com.btmatthews.maven.plugins.emailserver.AbstractMailServer;
-import com.btmatthews.maven.plugins.emailserver.MailServer;
 import com.btmatthews.utils.monitor.Logger;
 import com.dumbster.smtp.SimpleSmtpServer;
 
@@ -28,15 +27,18 @@ import com.dumbster.smtp.SimpleSmtpServer;
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0
  */
-public class DumbsterMailServer extends AbstractMailServer {
+public final class DumbsterMailServer extends AbstractMailServer {
 
     /**
      * Used to control the Dumbster fake SMTP server.
      */
-    protected SimpleSmtpServer server;
+    private SimpleSmtpServer server;
 
     /**
-     * Start the GreenMail mail servers.
+     * Start the Dumbster mail server.
+     * 
+     * @param logger
+     *            Used to log error messages.
      */
     public void start(final Logger logger) {
 	logger.logInfo("Starting Dumbster fake SMTP server...");
@@ -45,7 +47,10 @@ public class DumbsterMailServer extends AbstractMailServer {
     }
 
     /**
-     * Stop the GreenMail mail servers.
+     * Stop the Dumbster mail server.
+     * 
+     * @param logger
+     *            Used to log error messages.
      */
     public void stop(final Logger logger) {
 	logger.logInfo("Stopping Dumbster fake SMTP server...");

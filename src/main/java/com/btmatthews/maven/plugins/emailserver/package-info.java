@@ -14,23 +14,8 @@
  * limitations under the License.
  */
 
-package com.btmatthews.maven.plugins.emailserver.test;
-
-import com.btmatthews.maven.plugins.emailserver.dumbster.DumbsterMailServer;
-
 /**
- * Unit test {@link DumbsterMailServer}.
- * 
- * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
- * @since 1.0.0
+ * This package contains the interfaces and base classes for mail servers.
  */
-public class TestDumbsterMailServer extends AbstractMailServerTest {
+package com.btmatthews.maven.plugins.emailserver;
 
-    /**
-     * Configure the test for the {@link DumbsterMailServer} without a port
-     * offset and using SMTP.
-     */
-    public TestDumbsterMailServer() {
-	super(new DumbsterMailServer(), 0, false);
-    }
-}

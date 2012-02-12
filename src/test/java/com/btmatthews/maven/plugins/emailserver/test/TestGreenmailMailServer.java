@@ -1,63 +1,36 @@
+/*
+ * Copyright 2011-2012 Brian Matthews
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.btmatthews.maven.plugins.emailserver.test;
 
-import static org.mockito.MockitoAnnotations.initMocks;
-
-import java.util.Properties;
-
-import javax.mail.Message;
-import javax.mail.Message.RecipientType;
-import javax.mail.MessagingException;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.AddressException;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.mockito.Mock;
-
 import com.btmatthews.maven.plugins.emailserver.greenmail.GreenmailMailServer;
-import com.btmatthews.utils.monitor.Logger;
 
-public class TestGreenmailMailServer {
+/**
+ * Unit test {@link GreenmailMailServer}.
+ * 
+ * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
+ * @since 1.0.0
+ */
+public class TestGreenmailMailServer extends AbstractMailServerTest {
 
-    @Mock
-    private Logger logger;
-
-    private GreenmailMailServer mailServer;
-
-    @Before
-    public void setUp() {
-	initMocks(this);
-	mailServer = new GreenmailMailServer();
-	mailServer.start(logger);
-    }
-
-    @After
-    public void tearDown() {
-	mailServer.stop(logger);
-    }
-
-    @Test
-    public void testSendMail() throws AddressException, MessagingException {
-	final Properties props = new Properties();
-	props.put("mail.smtp.host", "localhost");
-	props.put("mail.smtp.port", "3025");
-
-	final Session mailSession = Session.getDefaultInstance(props);
-	final Message simpleMessage = new MimeMessage(mailSession);
-	final InternetAddress fromAddress = new InternetAddress(
-		"brian@btmatthews.com");
-	final InternetAddress toAddress = new InternetAddress(
-		"bmatthews68@gmail.com");
-
-	simpleMessage.setFrom(fromAddress);
-	simpleMessage.setRecipient(RecipientType.TO, toAddress);
-	simpleMessage.setSubject("Testing");
-	simpleMessage.setText("One Two Three ...");
-
-	Transport.send(simpleMessage);
+    /**
+     * Configure the test for the {@link GreenmailMailServer} without a port
+     * offset and using SMTP.
+     */
+    public TestGreenmailMailServer() {
+	super(new GreenmailMailServer(), 0, false);
     }
 }

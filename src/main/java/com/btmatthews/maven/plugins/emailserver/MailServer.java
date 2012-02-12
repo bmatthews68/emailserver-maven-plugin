@@ -19,22 +19,41 @@ package com.btmatthews.maven.plugins.emailserver;
 import com.btmatthews.utils.monitor.Server;
 
 /**
- * TODO
+ * The interface declaring the methods that must be defined in the mail server
+ * implementations.
  * 
- * @author <a href="mailto:TODO">TODO</a>
- * @version 1.0.0
- * 
+ * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
+ * @since 1.0.0
  */
 public interface MailServer extends Server {
 
     /**
-     * The default port for the SMTP protocol;
+     * The default port for the SMTP protocol.
      */
     int DEFAULT_SMTP_PORT = 25;
-    
+
+    /**
+     * The default port for the SMTPS protocol.
+     */
     int DEFAULT_SMTPS_PORT = 465;
-    
+
+    /**
+     * Sets the offset that will be applied to the standard port numbers for the
+     * mail protocols.
+     * 
+     * @param offset
+     *            The port offset.
+     */
     void setPortOffset(int offset);
-    
+
+    /**
+     * Indicates whether the mail protocols should be secured using SSL/TLS.
+     * 
+     * @param useSSL
+     *            <ul>
+     *            <li>{@code true} - SSL/TLS will be used.</li>
+     *            <li>{@code false} - SSL/TLS will not be used.</li>
+     *            </ul>
+     */
     void setUseSSL(boolean useSSL);
 }

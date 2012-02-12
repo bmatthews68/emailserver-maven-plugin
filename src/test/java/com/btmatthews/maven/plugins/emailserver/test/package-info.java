@@ -15,7 +15,7 @@
  */
 
 /**
- * This package contains the classes that implement the plug-in's Mojos.
+ * This package contains the classes that implement the plug-in.
  */
 package com.btmatthews.maven.plugins.emailserver.test;
 

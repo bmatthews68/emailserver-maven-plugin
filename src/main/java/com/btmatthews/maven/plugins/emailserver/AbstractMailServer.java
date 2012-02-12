@@ -1,26 +1,82 @@
+/*
+ * Copyright 2011-2012 Brian Matthews
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.btmatthews.maven.plugins.emailserver;
 
-import com.dumbster.smtp.SimpleSmtpServer;
-
+/**
+ * Abstract base class for mail servers.
+ * 
+ * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
+ * @since 1.0.0
+ */
 public abstract class AbstractMailServer implements MailServer {
 
+    /**
+     * The port offset applied to the standard mail protocol ports.
+     */
     private int portOffset = 0;
+
+    /**
+     * Used to indicate whether the transports should be secured with SSL/TLS.
+     */
     private boolean useSSL;
 
-    public void setPortOffset(final int offset) {
+    /**
+     * Sets the offset that will be applied to the standard port numbers for the
+     * mail protocols.
+     * 
+     * @param offset
+     *            The port offset.
+     */
+    public final void setPortOffset(final int offset) {
 	portOffset = offset;
     }
 
-    public void setUseSSL(final boolean use) {
+    /**
+     * Indicates whether the mail protocols should be secured using SSL/TLS.
+     * 
+     * @param use
+     *            <ul>
+     *            <li>{@code true} - SSL/TLS will be used.</li>
+     *            <li>{@code false} - SSL/TLS will not be used.</li>
+     *            </ul>
+     */
+    public final void setUseSSL(final boolean use) {
 	useSSL = use;
     }
 
-    protected int getPortOffset() {
+    /**
+     * Gets the offset that will be applied to the standard port numbers for the
+     * mail protocols.
+     * 
+     * @return The port offset.
+     */
+    protected final int getPortOffset() {
 	return portOffset;
     }
 
-    protected boolean isUseSSL() {
+    /**
+     * Indicates whether the mail protocols should be secured using SSL/TLS.
+     * 
+     * @return <ul>
+     *         <li>{@code true} - SSL/TLS will be used.</li>
+     *         <li>{@code false} - SSL/TLS will not be used.</li>
+     *         </ul>
+     */
+    protected final boolean isUseSSL() {
 	return useSSL;
     }
-
 }

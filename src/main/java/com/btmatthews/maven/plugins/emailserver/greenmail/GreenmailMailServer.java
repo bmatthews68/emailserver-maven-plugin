@@ -29,7 +29,7 @@ import com.icegreen.greenmail.util.ServerSetupTest;
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0
  */
-public class GreenmailMailServer extends AbstractMailServer {
+public final class GreenmailMailServer extends AbstractMailServer {
 
     /**
      * Used to control the GreenMail mail servers.
@@ -38,6 +38,9 @@ public class GreenmailMailServer extends AbstractMailServer {
 
     /**
      * Start the GreenMail mail servers.
+     * 
+     * @param logger
+     *            Used to log error messages.
      */
     public void start(final Logger logger) {
 	logger.logInfo("Starting mail servers...");
@@ -63,6 +66,9 @@ public class GreenmailMailServer extends AbstractMailServer {
 
     /**
      * Stop the GreenMail mail servers.
+     * 
+     * @param logger
+     *            Used to log error messages.
      */
     public void stop(final Logger logger) {
 	logger.logInfo("Stopping mail servers...");

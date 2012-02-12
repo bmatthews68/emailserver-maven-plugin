@@ -31,15 +31,15 @@ public abstract class AbstractServerMojo extends AbstractMojo implements Logger 
     /**
      * The port to listen on for the monitor commands.
      * 
-     * @parameter expression="${greenmail.monitor.port}"
+     * @parameter expression="${emailserver.monitor.port}"
      * @required
      */
     private int monitorPort;
 
     /**
-     * Key to provide when sending commands to the GreenMail server.
+     * Key to provide when sending commands to the mail server.
      * 
-     * @parameter expression="${greenmail.monitor.key}"
+     * @parameter expression="${emailserver.monitor.key}"
      * @required
      */
     private String monitorKey;
@@ -75,7 +75,7 @@ public abstract class AbstractServerMojo extends AbstractMojo implements Logger 
      * @param message
      *            The message to be logged.
      */
-    public void logInfo(final String message) {
+    public final void logInfo(final String message) {
 	getLog().info(message);
     }
 
@@ -85,7 +85,7 @@ public abstract class AbstractServerMojo extends AbstractMojo implements Logger 
      * @param message
      *            The message to be logged.
      */
-    public void logError(final String message) {
+    public final void logError(final String message) {
 	getLog().error(message);
     }
 
@@ -97,8 +97,7 @@ public abstract class AbstractServerMojo extends AbstractMojo implements Logger 
      * @param cause
      *            The exception that caused the message to be logged.
      */
-    public void logError(final String message, final Throwable cause) {
+    public final void logError(final String message, final Throwable cause) {
 	getLog().error(message, cause);
     }
-
 }

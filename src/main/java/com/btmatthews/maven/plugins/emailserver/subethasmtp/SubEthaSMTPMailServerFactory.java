@@ -19,7 +19,13 @@ package com.btmatthews.maven.plugins.emailserver.subethasmtp;
 import com.btmatthews.utils.monitor.Server;
 import com.btmatthews.utils.monitor.ServerFactory;
 
-public class SubEthaSMTPMailServerFactory implements ServerFactory {
+/**
+ * Server factory used to create SubEtha SMTP mail servers.
+ * 
+ * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
+ * @since 1.0.0
+ */
+public final class SubEthaSMTPMailServerFactory implements ServerFactory {
 
     /**
      * The server name for the SubEtha SMTP mail server.

@@ -29,7 +29,7 @@ import com.btmatthews.utils.monitor.Logger;
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0
  */
-public class SubEthaSMTPMailServer extends AbstractMailServer {
+public final class SubEthaSMTPMailServer extends AbstractMailServer {
 
     /**
      * Used to control the SubEtha SMTP server.
@@ -37,7 +37,10 @@ public class SubEthaSMTPMailServer extends AbstractMailServer {
     private SMTPServer server;
 
     /**
-     * Start the GreenMail mail servers.
+     * Start the mail server.
+     * 
+     * @param logger
+     *            Used to log error messages.
      */
     public void start(final Logger logger) {
 	logger.logInfo("Starting SubEtha SMTP server...");
@@ -45,16 +48,20 @@ public class SubEthaSMTPMailServer extends AbstractMailServer {
 	server = new SMTPServer(messageHandlerFactory);
 	if (isUseSSL()) {
 	    server.setPort(DEFAULT_SMTPS_PORT + getPortOffset());
+	    server.setEnableTLS(true);
+	    server.setRequireTLS(true);
 	} else {
 	    server.setPort(DEFAULT_SMTP_PORT + getPortOffset());
 	}
-	server.setEnableTLS(isUseSSL());
 	server.start();
 	logger.logInfo("Started SubEtha SMTP server");
     }
 
     /**
-     * Stop the GreenMail mail servers.
+     * Stop the mail server.
+     * 
+     * @param logger
+     *            Used to log error messages.
      */
     public void stop(final Logger logger) {
 	logger.logInfo("Stopping SubEtha SMTP server...");

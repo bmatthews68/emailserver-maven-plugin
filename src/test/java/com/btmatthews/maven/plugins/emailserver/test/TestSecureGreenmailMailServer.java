@@ -16,21 +16,21 @@
 
 package com.btmatthews.maven.plugins.emailserver.test;
 
-import com.btmatthews.maven.plugins.emailserver.dumbster.DumbsterMailServer;
+import com.btmatthews.maven.plugins.emailserver.greenmail.GreenmailMailServer;
 
 /**
- * Unit test {@link DumbsterMailServer}.
+ * Unit test {@link GreenmailMailServer}.
  * 
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0
  */
-public class TestDumbsterMailServer extends AbstractMailServerTest {
+public class TestSecureGreenmailMailServer extends AbstractMailServerTest {
 
     /**
-     * Configure the test for the {@link DumbsterMailServer} without a port
-     * offset and using SMTP.
+     * Configure the test for the {@link GreenmailMailServer} without a port
+     * offset and using SMTPS.
      */
-    public TestDumbsterMailServer() {
-	super(new DumbsterMailServer(), 0, false);
+    public TestSecureGreenmailMailServer() {
+	super(new GreenmailMailServer(), 0, true);
     }
 }

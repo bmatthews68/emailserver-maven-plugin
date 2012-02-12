@@ -33,25 +33,37 @@ import com.btmatthews.utils.monitor.ServerFactoryLocator;
 public class RunMojo extends AbstractServerMojo {
 
     /**
+     * If {@code true} the mail server is run as a daemon.
+     * 
      * @parameter expression="${emailserver.daemon}" default-value="false"
      */
     private boolean daemon;
 
     /**
+     * The name of the server:
+     * <ul>
+     * <li>greenmail</li>
+     * <li>dumbster</li>
+     * <li>subethasmtp
+     * <li>
+     * </ul>
+     * 
      * @parameter expression="${emailserver.serverName}"
      *            default-value="greenmail"
      */
     private String serverName;
 
     /**
-     * @parameter expression="${emailserver.portOffset}"
-     *            default-value="0"
+     * The offset applied to the standard protocol ports.
+     * 
+     * @parameter expression="${emailserver.portOffset}" default-value="0"
      */
     private int portOffset;
 
     /**
-     * @parameter expression="${emailserver.portOffset}"
-     *            default-value="false"
+     * If {@code true} then mail servers are run using secure transports.
+     * 
+     * @parameter expression="${emailserver.useSSL}" default-value="false"
      */
     private boolean useSSL;
 
@@ -99,7 +111,7 @@ public class RunMojo extends AbstractServerMojo {
 	if (factory == null) {
 	    server = null;
 	} else {
-	    server = (MailServer)factory.createServer();
+	    server = (MailServer) factory.createServer();
 	}
 	return server;
     }
