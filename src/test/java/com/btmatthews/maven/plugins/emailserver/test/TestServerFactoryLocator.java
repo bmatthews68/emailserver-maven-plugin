@@ -34,7 +34,7 @@ import com.btmatthews.utils.monitor.ServerFactory;
 import com.btmatthews.utils.monitor.ServerFactoryLocator;
 
 /**
- * Unit test {@link ServerLocatorFactory}.
+ * Unit test {@link ServerFactoryLocator}.
  * 
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0
