@@ -31,6 +31,8 @@
 		<links>
 			<item name="Maven 3" href="http://maven.apache.org/" />
 			<item name="GreenMail" href="http://www.icegreen.com/greenmail/" />
+			<item name="Dumbster" href="http://quintanasoft.com/dumbster/" />
+			<item name="SubEtha SMTP" href="http://code.google.com/p/subethasmtp/" />
 		</links>
 		<menu name="Overview">
 			<item name="Introduction" href="index.html" />

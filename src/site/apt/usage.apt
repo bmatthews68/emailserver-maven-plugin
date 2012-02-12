@@ -3,10 +3,10 @@
  ------
  Brian Matthews
  ------
- 2011-09-25
+ 2012-02-12
  ------
 
-~~ Copyright 2011 Brian Matthews
+~~ Copyright 2011-2012 Brian Matthews
 ~~
 ~~ Licensed under the Apache License, Version 2.0 (the "License");
 ~~ you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@
 
 Usage
 
-  The following examples describe the basic usage of the GreenMail Maven 
+  The following examples describe the basic usage of the e-Mail Server Maven 
   Plugin.
 
 * Basic Configuration
@@ -34,14 +34,23 @@ Usage
 <project>
   ...  
   <build>
+    <pluginManagement>
+      <plugins>
+        ...
+        <plugin>
+          <groupId>com.btmatthews.maven.plugins</groupId>
+          <artifactId>emailserver-maven-plugin</artifactId>
+          <version>1.0.0</version>
+        </plugin>
+    </pluginManagement>
     <plugins>
       ...
       <plugin>
         <groupId>com.btmatthews.maven.plugins</groupId>
-        <artifactId>greenmail-maven-plugin</artifactId>
+        <artifactId>emailserver-maven-plugin</artifactId>
         <configuration>
           <stopPort>[port number]</stop>
-          <stopKey>[database name]</stopKey>
+          <stopKey>[stop key]</stopKey>
         </configuration>
         <executions>
           <execution>
@@ -71,24 +80,27 @@ Usage
       ...
       <plugin>
         <groupId>com.btmatthews.maven.plugins.inmemdb</groupId>
-        <artifactId>greenmail-maven-plugin</artifactId>
+        <artifactId>emailserver-maven-plugin</artifactId>
         <configuration>
           <monitorPort>10025</monitorPort>
-          <monitorKey>GreenMail</monitorKey>
+          <monitorKey>greenmail</monitorKey>
         </configuration>
         <executions>
           <execution>
-            <id>start-mail-server</id>
+            <id>start-mail</id>
             <phase>pre-integration-test</phase>
             <goals>
               <goal>run</goal>
             </goals>
             <configuration>
-              <daemon>true</daemon>
+              <daemon>false</daemon>
+              <portOffset>3000</portOffset>
+              <useSSL>false</useSSL>
+              <serverName>greenmail</serverName>
             </configuration>
           </execution>
           <execution>
-            <id>stop-mail-server</id>
+            <id>stop-mail</id>
             <phase>post-integration-test</phase>
             <goals>
               <goal>stop</goal>
