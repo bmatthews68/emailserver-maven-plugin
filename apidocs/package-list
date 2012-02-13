@@ -1,1 +1,5 @@
-com.btmatthews.maven.plugins.greenmail.mojo
+com.btmatthews.maven.plugins.emailserver
+com.btmatthews.maven.plugins.emailserver.dumbster
+com.btmatthews.maven.plugins.emailserver.greenmail
+com.btmatthews.maven.plugins.emailserver.mojo
+com.btmatthews.maven.plugins.emailserver.subethasmtp

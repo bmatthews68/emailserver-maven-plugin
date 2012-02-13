@@ -2,20 +2,20 @@
 
 <rss version="0.91">
   <channel>
-    <title>Greenmail Mail Server Plugin - Checkstyle report</title>
-    <link>http://greenmail-maven-plugin.btmatthews.com</link>
-    <description>Greenmail Mail Server Plugin - Checkstyle report</description>
+    <title>e-Mail Server Plugin - Checkstyle report</title>
+    <link>http://emailserver-maven-plugin.btmatthews.com</link>
+    <description>e-Mail Server Plugin - Checkstyle report</description>
     <language>en-us</language>
-    <copyright>&#169;2011 Brian Matthews</copyright>
+    <copyright>&#169;2011 - 2012 Brian Matthews</copyright>
     <item>
-      <title>File: 8,
+      <title>File: 18,
              Errors: 2,
-             Warnings: 9,
+             Warnings: 0,
              Infos: 0
       </title>
-            <link>http://greenmail-maven-plugin.btmatthews.com/checkstyle.html</link>
+            <link>http://emailserver-maven-plugin.btmatthews.com/checkstyle.html</link>
       <description>
-        <p>Click <a href="http://greenmail-maven-plugin.btmatthews.com/checkstyle.html">here</a> for the full Checkstyle report.</p>
+        <p>Click <a href="http://emailserver-maven-plugin.btmatthews.com/checkstyle.html">here</a> for the full Checkstyle report.</p>
 
         <table summary="Files" boder="1">
           <thead>
@@ -29,7 +29,161 @@
           <tbody>
                           <tr>
                 <td>
-                  <a href="http://greenmail-maven-plugin.btmatthews.com/checkstyle.html#com.btmatthews.maven.plugins.greenmail.mojo.StopMojo.java">com/btmatthews/maven/plugins/greenmail/mojo/StopMojo.java</a>
+                  <a href="http://emailserver-maven-plugin.btmatthews.com/checkstyle.html#com.btmatthews.maven.plugins.emailserver.subethasmtp.SimpleMessageHandler.java">com/btmatthews/maven/plugins/emailserver/subethasmtp/SimpleMessageHandler.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://emailserver-maven-plugin.btmatthews.com/checkstyle.html#com.btmatthews.maven.plugins.emailserver.mojo.package-info.java">com/btmatthews/maven/plugins/emailserver/mojo/package-info.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://emailserver-maven-plugin.btmatthews.com/checkstyle.html#com.btmatthews.maven.plugins.emailserver.subethasmtp.SubEthaSMTPMailServerFactory.java">com/btmatthews/maven/plugins/emailserver/subethasmtp/SubEthaSMTPMailServerFactory.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://emailserver-maven-plugin.btmatthews.com/checkstyle.html#com.btmatthews.maven.plugins.emailserver.dumbster.DumbsterMailServer.java">com/btmatthews/maven/plugins/emailserver/dumbster/DumbsterMailServer.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://emailserver-maven-plugin.btmatthews.com/checkstyle.html#com.btmatthews.maven.plugins.emailserver.dumbster.DumbsterMailServerFactory.java">com/btmatthews/maven/plugins/emailserver/dumbster/DumbsterMailServerFactory.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://emailserver-maven-plugin.btmatthews.com/checkstyle.html#com.btmatthews.maven.plugins.emailserver.greenmail.GreenmailMailServer.java">com/btmatthews/maven/plugins/emailserver/greenmail/GreenmailMailServer.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://emailserver-maven-plugin.btmatthews.com/checkstyle.html#com.btmatthews.maven.plugins.emailserver.greenmail.package-info.java">com/btmatthews/maven/plugins/emailserver/greenmail/package-info.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://emailserver-maven-plugin.btmatthews.com/checkstyle.html#com.btmatthews.maven.plugins.emailserver.MailServer.java">com/btmatthews/maven/plugins/emailserver/MailServer.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://emailserver-maven-plugin.btmatthews.com/checkstyle.html#com.btmatthews.maven.plugins.emailserver.package-info.java">com/btmatthews/maven/plugins/emailserver/package-info.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://emailserver-maven-plugin.btmatthews.com/checkstyle.html#com.btmatthews.maven.plugins.emailserver.dumbster.package-info.java">com/btmatthews/maven/plugins/emailserver/dumbster/package-info.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://emailserver-maven-plugin.btmatthews.com/checkstyle.html#com.btmatthews.maven.plugins.emailserver.subethasmtp.SimpleMessageHandlerFactory.java">com/btmatthews/maven/plugins/emailserver/subethasmtp/SimpleMessageHandlerFactory.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://emailserver-maven-plugin.btmatthews.com/checkstyle.html#com.btmatthews.maven.plugins.emailserver.mojo.StopMojo.java">com/btmatthews/maven/plugins/emailserver/mojo/StopMojo.java</a>
                 </td>
                 <td>
                   0
@@ -43,7 +197,35 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://greenmail-maven-plugin.btmatthews.com/checkstyle.html#com.btmatthews.maven.plugins.greenmail.mojo.RunMojo.java">com/btmatthews/maven/plugins/greenmail/mojo/RunMojo.java</a>
+                  <a href="http://emailserver-maven-plugin.btmatthews.com/checkstyle.html#com.btmatthews.maven.plugins.emailserver.mojo.AbstractServerMojo.java">com/btmatthews/maven/plugins/emailserver/mojo/AbstractServerMojo.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://emailserver-maven-plugin.btmatthews.com/checkstyle.html#com.btmatthews.maven.plugins.emailserver.AbstractMailServer.java">com/btmatthews/maven/plugins/emailserver/AbstractMailServer.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://emailserver-maven-plugin.btmatthews.com/checkstyle.html#com.btmatthews.maven.plugins.emailserver.mojo.RunMojo.java">com/btmatthews/maven/plugins/emailserver/mojo/RunMojo.java</a>
                 </td>
                 <td>
                   0
@@ -57,21 +239,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://greenmail-maven-plugin.btmatthews.com/checkstyle.html#com.btmatthews.maven.plugins.greenmail.mojo.GreenMailServer.java">com/btmatthews/maven/plugins/greenmail/mojo/GreenMailServer.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  4
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://greenmail-maven-plugin.btmatthews.com/checkstyle.html#com.btmatthews.maven.plugins.greenmail.mojo.package-info.java">com/btmatthews/maven/plugins/greenmail/mojo/package-info.java</a>
+                  <a href="http://emailserver-maven-plugin.btmatthews.com/checkstyle.html#com.btmatthews.maven.plugins.emailserver.greenmail.GreenmailMailServerFactory.java">com/btmatthews/maven/plugins/emailserver/greenmail/GreenmailMailServerFactory.java</a>
                 </td>
                 <td>
                   0
@@ -85,21 +253,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://greenmail-maven-plugin.btmatthews.com/checkstyle.html#com.btmatthews.maven.plugins.greenmail.mojo.Monitor.java">com/btmatthews/maven/plugins/greenmail/mojo/Monitor.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  2
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://greenmail-maven-plugin.btmatthews.com/checkstyle.html#com.btmatthews.maven.plugins.greenmail.mojo.Server.java">com/btmatthews/maven/plugins/greenmail/mojo/Server.java</a>
+                  <a href="http://emailserver-maven-plugin.btmatthews.com/checkstyle.html#com.btmatthews.maven.plugins.emailserver.subethasmtp.package-info.java">com/btmatthews/maven/plugins/emailserver/subethasmtp/package-info.java</a>
                 </td>
                 <td>
                   0
@@ -113,21 +267,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://greenmail-maven-plugin.btmatthews.com/checkstyle.html#com.btmatthews.maven.plugins.greenmail.mojo.AbstractServerMojo.java">com/btmatthews/maven/plugins/greenmail/mojo/AbstractServerMojo.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  3
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://greenmail-maven-plugin.btmatthews.com/checkstyle.html#com.btmatthews.maven.plugins.greenmail.mojo.Logger.java">com/btmatthews/maven/plugins/greenmail/mojo/Logger.java</a>
+                  <a href="http://emailserver-maven-plugin.btmatthews.com/checkstyle.html#com.btmatthews.maven.plugins.emailserver.subethasmtp.SubEthaSMTPMailServer.java">com/btmatthews/maven/plugins/emailserver/subethasmtp/SubEthaSMTPMailServer.java</a>
                 </td>
                 <td>
                   0
