@@ -35,9 +35,9 @@ public class RunMojo extends AbstractServerMojo {
     /**
      * If {@code true} the mail server is run as a daemon.
      * 
-     * @parameter expression="${emailserver.daemon}" default-value="false"
+     * @parameter expression="${emailserver.daemon}" default-value="true"
      */
-    private boolean daemon;
+    private boolean daemon = true;
 
     /**
      * The name of the server:
@@ -51,21 +51,21 @@ public class RunMojo extends AbstractServerMojo {
      * @parameter expression="${emailserver.serverName}"
      *            default-value="greenmail"
      */
-    private String serverName;
+    private String serverName = "greenmail";
 
     /**
      * The offset applied to the standard protocol ports.
      * 
      * @parameter expression="${emailserver.portOffset}" default-value="0"
      */
-    private int portOffset;
+    private int portOffset = 0;
 
     /**
      * If {@code true} then mail servers are run using secure transports.
      * 
      * @parameter expression="${emailserver.useSSL}" default-value="false"
      */
-    private boolean useSSL;
+    private boolean useSSL = false;
 
     /**
      * The default constructor.
