@@ -23,7 +23,7 @@
 	<googleAnalyticsAccountId>UA-5713196-10</googleAnalyticsAccountId>
 	<bannerLeft>
 		<name>GreenMail Maven Plugin</name>
-		<href>http://greenmail-maven-plugin.btmatthews.com</href>
+		<href>http://emailserver-maven-plugin.btmatthews.com</href>
 	</bannerLeft>
 	<publishDate format="dd MMM yyyy" position="left" />
 	<version position="left" />
