@@ -4,7 +4,7 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>com.btmatthews.maven.plugins.emailserver</groupId>
+				<groupId>com.btmatthews.maven.plugins</groupId>
 				<artifactId>emailserver-maven-plugin</artifactId>
 				<configuration>
 					<monitorPort>10025</monitorPort>

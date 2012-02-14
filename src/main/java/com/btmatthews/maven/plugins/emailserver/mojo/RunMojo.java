@@ -35,9 +35,9 @@ public class RunMojo extends AbstractServerMojo {
     /**
      * If {@code true} the mail server is run as a daemon.
      * 
-     * @parameter expression="${emailserver.daemon}" default-value="true"
+     * @parameter expression="${emailserver.daemon}" default-value="false"
      */
-    private boolean daemon = true;
+    private boolean daemon = false;
 
     /**
      * The name of the server:

@@ -4,11 +4,13 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>com.btmatthews.maven.plugins.emailserver</groupId>
+				<groupId>com.btmatthews.maven.plugins</groupId>
 				<artifactId>emailserver-maven-plugin</artifactId>
+				<version>1.0.0-SNAPSHOT</version>
 				<configuration>
 					<monitorPort>10025</monitorPort>
 					<monitorKey>emailserver</monitorKey>
+					<daemon>true</daemon>
 				</configuration>
 			</plugin>
 		</plugins>
