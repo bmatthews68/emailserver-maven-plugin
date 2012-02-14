@@ -16,6 +16,11 @@
 
 package com.btmatthews.maven.plugins.emailserver;
 
+import java.text.MessageFormat;
+import java.util.ResourceBundle;
+
+import com.btmatthews.utils.monitor.Logger;
+
 /**
  * Abstract base class for mail servers.
  * 
@@ -23,6 +28,9 @@ package com.btmatthews.maven.plugins.emailserver;
  * @since 1.0.0
  */
 public abstract class AbstractMailServer implements MailServer {
+
+    private ResourceBundle bundle = ResourceBundle
+	    .getBundle("com.btmatthews.maven.plugins.emailserver.messages");
 
     /**
      * The port offset applied to the standard mail protocol ports.
@@ -78,5 +86,34 @@ public abstract class AbstractMailServer implements MailServer {
      */
     protected final boolean isUseSSL() {
 	return useSSL;
+    }
+
+    /**
+     * Write a message to the log bundle.
+     * 
+     * @param logger
+     *            The logger.
+     * @param key
+     *            The message key.
+     */
+    protected final void logInfo(final Logger logger, final String key) {
+	logInfo(logger, key, new Object[0]);
+    }
+
+    /**
+     * Write a parameterised message to the log bundle.
+     * 
+     * @param logger
+     *            The logger.
+     * @param key
+     *            The message key.
+     * @param params
+     *            The message parameters.
+     */
+    protected final void logInfo(final Logger logger, final String key,
+	    final Object[] params) {
+	final String format = bundle.getString(key);
+	final String message = MessageFormat.format(format, params);
+	logger.logInfo(message);
     }
 }

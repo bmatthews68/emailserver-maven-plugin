@@ -41,9 +41,9 @@ public final class DumbsterMailServer extends AbstractMailServer {
      *            Used to log error messages.
      */
     public void start(final Logger logger) {
-	logger.logInfo("Starting Dumbster fake SMTP server...");
+	logInfo(logger, "com.btmatthews.maven.plugin.emailserver.dumbster.starting");
 	server = SimpleSmtpServer.start(DEFAULT_SMTP_PORT + getPortOffset());
-	logger.logInfo("Started Dumbster fake SMTP server");
+	logInfo(logger, "com.btmatthews.maven.plugin.emailserver.dumbster.started");
     }
 
     /**
@@ -53,10 +53,10 @@ public final class DumbsterMailServer extends AbstractMailServer {
      *            Used to log error messages.
      */
     public void stop(final Logger logger) {
-	logger.logInfo("Stopping Dumbster fake SMTP server...");
+	logInfo(logger, "com.btmatthews.maven.plugin.emailserver.greenmail.stopping");
 	if (server != null) {
 	    server.stop();
 	}
-	logger.logInfo("Stopped Dumbster fake SMTP server");
+	logInfo(logger, "com.btmatthews.maven.plugin.emailserver.greenmail.stopped");
     }
 }

@@ -43,7 +43,7 @@ public final class GreenmailMailServer extends AbstractMailServer {
      *            Used to log error messages.
      */
     public void start(final Logger logger) {
-	logger.logInfo("Starting mail servers...");
+	logInfo(logger, "com.btmatthews.maven.plugin.emailserver.greenmail.starting");
 	ServerSetup[] serverSetups;
 	if (getPortOffset() != 0) {
 	    ServerSetupTest.setPortOffset(getPortOffset());
@@ -61,7 +61,7 @@ public final class GreenmailMailServer extends AbstractMailServer {
 	}
 	greenMail = new GreenMail(serverSetups);
 	greenMail.start();
-	logger.logInfo("Started mail servers");
+	logInfo(logger, "com.btmatthews.maven.plugin.emailserver.greenmail.started");
     }
 
     /**
@@ -71,11 +71,11 @@ public final class GreenmailMailServer extends AbstractMailServer {
      *            Used to log error messages.
      */
     public void stop(final Logger logger) {
-	logger.logInfo("Stopping mail servers...");
+	logInfo(logger, "com.btmatthews.maven.plugin.emailserver.greenmail.stopping");
 	if (greenMail != null) {
 	    greenMail.stop();
 	    greenMail = null;
 	}
-	logger.logInfo("Stopped mail servers");
+	logInfo(logger, "com.btmatthews.maven.plugin.emailserver.greenmail.stopped");
     }
 }

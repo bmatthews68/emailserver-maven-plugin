@@ -43,7 +43,7 @@ public final class SubEthaSMTPMailServer extends AbstractMailServer {
      *            Used to log error messages.
      */
     public void start(final Logger logger) {
-	logger.logInfo("Starting SubEtha SMTP server...");
+	logInfo(logger, "com.btmatthews.maven.plugin.emailserver.subethasmtp.starting");
 	final MessageHandlerFactory messageHandlerFactory = new SimpleMessageHandlerFactory();
 	server = new SMTPServer(messageHandlerFactory);
 	if (isUseSSL()) {
@@ -54,7 +54,7 @@ public final class SubEthaSMTPMailServer extends AbstractMailServer {
 	    server.setPort(DEFAULT_SMTP_PORT + getPortOffset());
 	}
 	server.start();
-	logger.logInfo("Started SubEtha SMTP server");
+	logInfo(logger, "com.btmatthews.maven.plugin.emailserver.subethasmtp.started");
     }
 
     /**
@@ -64,11 +64,11 @@ public final class SubEthaSMTPMailServer extends AbstractMailServer {
      *            Used to log error messages.
      */
     public void stop(final Logger logger) {
-	logger.logInfo("Stopping SubEtha SMTP server...");
+	logInfo(logger, "com.btmatthews.maven.plugin.emailserver.subethasmtp.stopping");
 	if (server != null) {
 	    server.stop();
 	    server = null;
 	}
-	logger.logInfo("Stopped SubEtha SMTP server");
+	logInfo(logger, "com.btmatthews.maven.plugin.emailserver.subethasmtp.stopped");
     }
 }
