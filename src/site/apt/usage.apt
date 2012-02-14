@@ -3,7 +3,7 @@
  ------
  Brian Matthews
  ------
- 2012-02-12
+ 2012-02-14
  ------
 
 ~~ Copyright 2011-2012 Brian Matthews
@@ -58,6 +58,15 @@ Usage
             <goals>
               <goal>run</goal>
             <goals>
+            <configuration>
+              <daemon>true</daemon>
+            </configuration>
+          </execution>
+          <execution>
+            <id>stop-mail</id>
+            <goals>
+              <goal>stop</goal>
+            <goals>
           </execution>
         </executions>
       </plugin>
@@ -79,7 +88,7 @@ Usage
     <plugins>
       ...
       <plugin>
-        <groupId>com.btmatthews.maven.plugins.inmemdb</groupId>
+        <groupId>com.btmatthews.maven.plugins</groupId>
         <artifactId>emailserver-maven-plugin</artifactId>
         <configuration>
           <monitorPort>10025</monitorPort>
@@ -93,7 +102,7 @@ Usage
               <goal>run</goal>
             </goals>
             <configuration>
-              <daemon>false</daemon>
+              <daemon>true</daemon>
               <portOffset>3000</portOffset>
               <useSSL>false</useSSL>
               <serverName>greenmail</serverName>
