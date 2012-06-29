@@ -48,7 +48,7 @@ public class RunMojo extends AbstractServerMojo {
      * <li>
      * </ul>
      * 
-     * @parameter expression="${emailserver.serverName}"
+     * @parameter property="emailserver.serverName"
      *            default-value="greenmail"
      */
     private String serverName = "greenmail";
@@ -56,14 +56,14 @@ public class RunMojo extends AbstractServerMojo {
     /**
      * The offset applied to the standard protocol ports.
      * 
-     * @parameter expression="${emailserver.portOffset}" default-value="0"
+     * @parameter property="emailserver.portOffset" default-value="0"
      */
     private int portOffset = 0;
 
     /**
      * If {@code true} then mail servers are run using secure transports.
      * 
-     * @parameter expression="${emailserver.useSSL}" default-value="false"
+     * @parameter property=emailserver.useSSL" default-value="false"
      */
     private boolean useSSL = false;
 

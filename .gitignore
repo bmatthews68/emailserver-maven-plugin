@@ -3,4 +3,6 @@
 /.classpath
 /.checkstyle
 /.project
+/.idea
+/emailserver-maven-plugin.iml
 /derby.log

@@ -31,7 +31,7 @@ public abstract class AbstractServerMojo extends AbstractMojo implements Logger 
     /**
      * The port to listen on for the monitor commands.
      * 
-     * @parameter expression="${emailserver.monitor.port}"
+     * @parameter property="emailserver.monitor.port"
      * @required
      */
     private int monitorPort;
@@ -39,7 +39,7 @@ public abstract class AbstractServerMojo extends AbstractMojo implements Logger 
     /**
      * Key to provide when sending commands to the mail server.
      * 
-     * @parameter expression="${emailserver.monitor.key}"
+     * @parameter property="emailserver.monitor.key"
      * @required
      */
     private String monitorKey;
