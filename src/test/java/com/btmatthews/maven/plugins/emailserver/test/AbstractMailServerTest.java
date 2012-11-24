@@ -21,23 +21,21 @@ import static org.mockito.MockitoAnnotations.initMocks;
 import javax.mail.MessagingException;
 import javax.mail.internet.AddressException;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.mockito.Mock;
-
 import com.btmatthews.maven.plugins.emailserver.MailServer;
 import com.btmatthews.utils.monitor.Logger;
 import com.icegreen.greenmail.util.GreenMailUtil;
 import com.icegreen.greenmail.util.ServerSetup;
 import com.icegreen.greenmail.util.ServerSetupTest;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.Mock;
 
 /**
  * Abstract base class implementing mail server tests.
- * 
+ *
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0
- * 
  */
 public abstract class AbstractMailServerTest {
 
@@ -60,33 +58,30 @@ public abstract class AbstractMailServerTest {
     /**
      * Configure the mail server and pick the server setup used to send the test
      * e-mail.
-     * 
-     * @param server
-     *            The mail server.
-     * @param portOffset
-     *            The port offset.
-     * @param useSSL
-     *            If we are to test using SSL/TLS.
+     *
+     * @param server     The mail server.
+     * @param portOffset The port offset.
+     * @param useSSL     If we are to test using SSL/TLS.
      */
     protected AbstractMailServerTest(final MailServer server,
-	    final int portOffset, final boolean useSSL) {
-	mailServer = server;
-	mailServer.setPortOffset(portOffset);
-	mailServer.setUseSSL(useSSL);
-	if (portOffset != 0) {
-	    ServerSetupTest.setPortOffset(portOffset);
-	    if (useSSL) {
-		serverSetup = ServerSetupTest.SMTPS;
-	    } else {
-		serverSetup = ServerSetupTest.SMTP;
-	    }
-	} else {
-	    if (useSSL) {
-		serverSetup = ServerSetup.SMTPS;
-	    } else {
-		serverSetup = ServerSetup.SMTP;
-	    }
-	}
+                                     final int portOffset, final boolean useSSL) {
+        mailServer = server;
+        mailServer.setPortOffset(portOffset);
+        mailServer.setUseSSL(useSSL);
+        if (portOffset != 0) {
+            ServerSetupTest.setPortOffset(portOffset);
+            if (useSSL) {
+                serverSetup = ServerSetupTest.SMTPS;
+            } else {
+                serverSetup = ServerSetupTest.SMTP;
+            }
+        } else {
+            if (useSSL) {
+                serverSetup = ServerSetup.SMTPS;
+            } else {
+                serverSetup = ServerSetup.SMTP;
+            }
+        }
     }
 
     /**
@@ -94,8 +89,8 @@ public abstract class AbstractMailServerTest {
      */
     @Before
     public void setUp() {
-	initMocks(this);
-	mailServer.start(logger);
+        initMocks(this);
+        mailServer.start(logger);
     }
 
     /**
@@ -103,7 +98,7 @@ public abstract class AbstractMailServerTest {
      */
     @After
     public void tearDown() {
-	mailServer.stop(logger);
+        mailServer.stop(logger);
     }
 
     /**
@@ -111,16 +106,14 @@ public abstract class AbstractMailServerTest {
      * uses
      * {@link GreenMailUtil#sendTextEmail(String, String, String, String, ServerSetup)}
      * to send the test e-mail.
-     * 
-     * @throws AddressException
-     *             If the to and/or from e-mail addresses were malformed.
-     * @throws MessagingException
-     *             If there was any other problem sending the e-mail.
+     *
+     * @throws AddressException   If the to and/or from e-mail addresses were malformed.
+     * @throws MessagingException If there was any other problem sending the e-mail.
      */
     @Test
     public void testSend() throws AddressException, MessagingException {
-	GreenMailUtil.sendTextEmail("bmatthews68@gmail.com",
-		"brian@btmatthews.com", "Testing", "One Two Three ...",
-		serverSetup);
+        GreenMailUtil.sendTextEmail("bmatthews68@gmail.com",
+                "brian@btmatthews.com", "Testing", "One Two Three ...",
+                serverSetup);
     }
 }

@@ -21,7 +21,7 @@ import com.btmatthews.utils.monitor.ServerFactory;
 
 /**
  * Server factory used to create Dumbster mail servers.
- * 
+ *
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0
  */
@@ -34,21 +34,21 @@ public final class DumbsterMailServerFactory implements ServerFactory {
 
     /**
      * The server name for the Dumbster mail server.
-     * 
-     * @return {@link DUMSTER}.
+     *
+     * @return {@link DumbsterMailServerFactory#DUMBSTER}.
      * @see com.btmatthews.utils.monitor.ServerFactory#getServerName()
      */
     public String getServerName() {
-	return DUMBSTER;
+        return DUMBSTER;
     }
 
     /**
      * Create the server object for a Dumbster mail server.
-     * 
+     *
      * @return The newly created server object.
      * @see com.btmatthews.utils.monitor.ServerFactory#createServer()
      */
-   public Server createServer() {
-	return new DumbsterMailServer();
+    public Server createServer() {
+        return new DumbsterMailServer();
     }
 }

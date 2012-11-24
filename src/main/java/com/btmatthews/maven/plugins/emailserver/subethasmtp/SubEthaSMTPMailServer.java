@@ -16,16 +16,15 @@
 
 package com.btmatthews.maven.plugins.emailserver.subethasmtp;
 
-import org.subethamail.smtp.MessageHandlerFactory;
-import org.subethamail.smtp.server.SMTPServer;
-
 import com.btmatthews.maven.plugins.emailserver.AbstractMailServer;
 import com.btmatthews.utils.monitor.Logger;
+import org.subethamail.smtp.MessageHandlerFactory;
+import org.subethamail.smtp.server.SMTPServer;
 
 /**
  * Encapsulates the <a href="http://code.google.com/p/subethasmtp/">SubEtha
  * SMTP</a> server allowing it to be controlled by a monitor.
- * 
+ *
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0
  */
@@ -38,37 +37,35 @@ public final class SubEthaSMTPMailServer extends AbstractMailServer {
 
     /**
      * Start the mail server.
-     * 
-     * @param logger
-     *            Used to log error messages.
+     *
+     * @param logger Used to log error messages.
      */
     public void start(final Logger logger) {
-	logInfo(logger, "com.btmatthews.maven.plugin.emailserver.subethasmtp.starting");
-	final MessageHandlerFactory messageHandlerFactory = new SimpleMessageHandlerFactory();
-	server = new SMTPServer(messageHandlerFactory);
-	if (isUseSSL()) {
-	    server.setPort(DEFAULT_SMTPS_PORT + getPortOffset());
-	    server.setEnableTLS(true);
-	    server.setRequireTLS(true);
-	} else {
-	    server.setPort(DEFAULT_SMTP_PORT + getPortOffset());
-	}
-	server.start();
-	logInfo(logger, "com.btmatthews.maven.plugin.emailserver.subethasmtp.started");
+        logInfo(logger, "com.btmatthews.maven.plugin.emailserver.subethasmtp.starting");
+        final MessageHandlerFactory messageHandlerFactory = new SimpleMessageHandlerFactory();
+        server = new SMTPServer(messageHandlerFactory);
+        if (isUseSSL()) {
+            server.setPort(DEFAULT_SMTPS_PORT + getPortOffset());
+            server.setEnableTLS(true);
+            server.setRequireTLS(true);
+        } else {
+            server.setPort(DEFAULT_SMTP_PORT + getPortOffset());
+        }
+        server.start();
+        logInfo(logger, "com.btmatthews.maven.plugin.emailserver.subethasmtp.started");
     }
 
     /**
      * Stop the mail server.
-     * 
-     * @param logger
-     *            Used to log error messages.
+     *
+     * @param logger Used to log error messages.
      */
     public void stop(final Logger logger) {
-	logInfo(logger, "com.btmatthews.maven.plugin.emailserver.subethasmtp.stopping");
-	if (server != null) {
-	    server.stop();
-	    server = null;
-	}
-	logInfo(logger, "com.btmatthews.maven.plugin.emailserver.subethasmtp.stopped");
+        logInfo(logger, "com.btmatthews.maven.plugin.emailserver.subethasmtp.stopping");
+        if (server != null) {
+            server.stop();
+            server = null;
+        }
+        logInfo(logger, "com.btmatthews.maven.plugin.emailserver.subethasmtp.stopped");
     }
 }

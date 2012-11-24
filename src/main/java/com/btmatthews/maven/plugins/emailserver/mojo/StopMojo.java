@@ -16,18 +16,16 @@
 
 package com.btmatthews.maven.plugins.emailserver.mojo;
 
-import org.apache.maven.plugin.Mojo;
-
 import com.btmatthews.utils.monitor.Monitor;
+import org.apache.maven.plugins.annotations.Mojo;
 
 /**
  * Stop the email server(s).
- * 
- * @goal stop
- * 
+ *
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0
  */
+@Mojo(name = "stop")
 public class StopMojo extends AbstractServerMojo {
 
     /**
@@ -39,11 +37,9 @@ public class StopMojo extends AbstractServerMojo {
     /**
      * Issue a stop command to the monitor in order to shutdown the email
      * server(s).
-     * 
-     * @see Mojo#execute()
      */
     public void execute() {
-	final Monitor monitor = new Monitor(getMonitorKey(), getMonitorPort());
-	monitor.sendCommand("stop", this);
+        final Monitor monitor = new Monitor(getMonitorKey(), getMonitorPort());
+        monitor.sendCommand("stop", this);
     }
 }

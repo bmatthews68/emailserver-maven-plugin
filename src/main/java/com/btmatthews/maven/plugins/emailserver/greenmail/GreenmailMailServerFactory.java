@@ -21,34 +21,34 @@ import com.btmatthews.utils.monitor.ServerFactory;
 
 /**
  * Server factory used to create Greenmail mail servers.
- * 
+ *
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0
  */
 public final class GreenmailMailServerFactory implements ServerFactory {
-    
+
     /**
      * The server name for the Greenmail mail server.
      */
     private static final String GREENMAIL = "greenmail";
-    
+
     /**
      * The server name for the Greenmail mail server.
-     * 
-     * @return {@link GREENMAIL}.
+     *
+     * @return {@link GreenmailMailServerFactory#GREENMAIL}.
      * @see com.btmatthews.utils.monitor.ServerFactory#getServerName()
      */
     public String getServerName() {
-	return GREENMAIL;
+        return GREENMAIL;
     }
 
     /**
      * Create the server object for a Greenmail mail server.
-     * 
+     *
      * @return The newly created server object.
      * @see com.btmatthews.utils.monitor.ServerFactory#createServer()
      */
     public Server createServer() {
-	return new GreenmailMailServer();
+        return new GreenmailMailServer();
     }
 }

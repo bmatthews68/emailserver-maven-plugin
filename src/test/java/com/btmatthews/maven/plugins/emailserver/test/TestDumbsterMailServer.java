@@ -20,7 +20,7 @@ import com.btmatthews.maven.plugins.emailserver.dumbster.DumbsterMailServer;
 
 /**
  * Unit test {@link DumbsterMailServer}.
- * 
+ *
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0
  */
@@ -31,6 +31,6 @@ public class TestDumbsterMailServer extends AbstractMailServerTest {
      * offset and using SMTP.
      */
     public TestDumbsterMailServer() {
-	super(new DumbsterMailServer(), 0, false);
+        super(new DumbsterMailServer(), 0, false);
     }
 }

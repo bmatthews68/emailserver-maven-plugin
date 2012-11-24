@@ -16,15 +16,8 @@
 
 package com.btmatthews.maven.plugins.emailserver.test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 import static org.mockito.MockitoAnnotations.initMocks;
-
-import org.junit.Before;
-import org.junit.Test;
-import org.mockito.Mock;
 
 import com.btmatthews.maven.plugins.emailserver.dumbster.DumbsterMailServerFactory;
 import com.btmatthews.maven.plugins.emailserver.greenmail.GreenmailMailServerFactory;
@@ -32,10 +25,13 @@ import com.btmatthews.maven.plugins.emailserver.subethasmtp.SubEthaSMTPMailServe
 import com.btmatthews.utils.monitor.Logger;
 import com.btmatthews.utils.monitor.ServerFactory;
 import com.btmatthews.utils.monitor.ServerFactoryLocator;
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.Mock;
 
 /**
  * Unit test {@link ServerFactoryLocator}.
- * 
+ *
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0
  */
@@ -57,8 +53,8 @@ public class TestServerFactoryLocator {
      */
     @Before
     public void setUp() {
-	initMocks(this);
-	locator = ServerFactoryLocator.getInstance(logger);
+        initMocks(this);
+        locator = ServerFactoryLocator.getInstance(logger);
     }
 
     /**
@@ -67,8 +63,8 @@ public class TestServerFactoryLocator {
      */
     @Test
     public void testNull() {
-	final ServerFactory factory = locator.getFactory(null);
-	assertNull(factory);
+        final ServerFactory factory = locator.getFactory(null);
+        assertNull(factory);
     }
 
     /**
@@ -77,8 +73,8 @@ public class TestServerFactoryLocator {
      */
     @Test
     public void testBlank() {
-	final ServerFactory factory = locator.getFactory("");
-	assertNull(factory);
+        final ServerFactory factory = locator.getFactory("");
+        assertNull(factory);
     }
 
     /**
@@ -88,10 +84,10 @@ public class TestServerFactoryLocator {
      */
     @Test
     public void testGreenmail() {
-	final ServerFactory factory = locator.getFactory("greenmail");
-	assertNotNull(factory);
-	assertEquals("greenmail", factory.getServerName());
-	assertTrue(factory instanceof GreenmailMailServerFactory);
+        final ServerFactory factory = locator.getFactory("greenmail");
+        assertNotNull(factory);
+        assertEquals("greenmail", factory.getServerName());
+        assertTrue(factory instanceof GreenmailMailServerFactory);
     }
 
     /**
@@ -101,10 +97,10 @@ public class TestServerFactoryLocator {
      */
     @Test
     public void testDumbster() {
-	final ServerFactory factory = locator.getFactory("dumbster");
-	assertNotNull(factory);
-	assertEquals("dumbster", factory.getServerName());
-	assertTrue(factory instanceof DumbsterMailServerFactory);
+        final ServerFactory factory = locator.getFactory("dumbster");
+        assertNotNull(factory);
+        assertEquals("dumbster", factory.getServerName());
+        assertTrue(factory instanceof DumbsterMailServerFactory);
     }
 
     /**
@@ -114,9 +110,9 @@ public class TestServerFactoryLocator {
      */
     @Test
     public void testSubEthaSMTP() {
-	final ServerFactory factory = locator.getFactory("subethasmtp");
-	assertNotNull(factory);
-	assertEquals("subethasmtp", factory.getServerName());
-	assertTrue(factory instanceof SubEthaSMTPMailServerFactory);
+        final ServerFactory factory = locator.getFactory("subethasmtp");
+        assertNotNull(factory);
+        assertEquals("subethasmtp", factory.getServerName());
+        assertTrue(factory instanceof SubEthaSMTPMailServerFactory);
     }
 }

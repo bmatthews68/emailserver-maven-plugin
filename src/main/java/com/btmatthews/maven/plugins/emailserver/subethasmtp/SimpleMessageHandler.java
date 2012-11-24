@@ -22,7 +22,7 @@ import org.subethamail.smtp.MessageHandler;
 
 /**
  * Dummy message handler that does nothing with the message.
- * 
+ *
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0
  */
@@ -30,9 +30,8 @@ public final class SimpleMessageHandler implements MessageHandler {
 
     /**
      * Set the from e-mail address.
-     * 
-     * @param address
-     *            The from e-mail address.
+     *
+     * @param address The from e-mail address.
      * @see org.subethamail.smtp.MessageHandler#from(java.lang.String)
      */
     public void from(final String address) {
@@ -40,9 +39,8 @@ public final class SimpleMessageHandler implements MessageHandler {
 
     /**
      * Set a recipient e-mail address.
-     * 
-     * @param address
-     *            The recipient e-mail address.
+     *
+     * @param address The recipient e-mail address.
      * @see org.subethamail.smtp.MessageHandler#recipient(java.lang.String)
      */
     public void recipient(final String address) {
@@ -50,9 +48,8 @@ public final class SimpleMessageHandler implements MessageHandler {
 
     /**
      * Set the message data.
-     * 
-     * @param inputStream
-     *            The message data stream.
+     *
+     * @param inputStream The message data stream.
      * @see org.subethamail.smtp.MessageHandler#data(java.io.InputStream)
      */
     public void data(final InputStream inputStream) {
@@ -60,7 +57,7 @@ public final class SimpleMessageHandler implements MessageHandler {
 
     /**
      * Used to indicate the message has been delivered.
-     * 
+     *
      * @see org.subethamail.smtp.MessageHandler#done()
      */
     public void done() {

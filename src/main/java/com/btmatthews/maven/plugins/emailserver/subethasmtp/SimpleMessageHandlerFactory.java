@@ -30,14 +30,13 @@ public final class SimpleMessageHandlerFactory implements MessageHandlerFactory 
 
     /**
      * Create a message handler for a message context.
-     * 
-     * @param context
-     *            The message context.
+     *
+     * @param context The message context.
      * @return An instance of {@link SimpleMessageHandler}.
      * @see org.subethamail.smtp.MessageHandlerFactory#create(org.subethamail.smtp.MessageContext)
      */
     public MessageHandler create(final MessageContext context) {
-	return new SimpleMessageHandler();
+        return new SimpleMessageHandler();
     }
 
 }

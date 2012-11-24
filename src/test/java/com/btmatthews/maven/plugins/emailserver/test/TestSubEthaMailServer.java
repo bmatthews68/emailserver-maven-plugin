@@ -20,7 +20,7 @@ import com.btmatthews.maven.plugins.emailserver.subethasmtp.SubEthaSMTPMailServe
 
 /**
  * Unit test {@link SubEthaSMTPMailServer}.
- * 
+ *
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0
  */
@@ -31,6 +31,6 @@ public class TestSubEthaMailServer extends AbstractMailServerTest {
      * offset and using SMTP.
      */
     public TestSubEthaMailServer() {
-	super(new SubEthaSMTPMailServer(), 0, false);
+        super(new SubEthaSMTPMailServer(), 0, false);
     }
 }

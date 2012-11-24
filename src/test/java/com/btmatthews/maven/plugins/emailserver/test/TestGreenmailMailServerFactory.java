@@ -16,21 +16,18 @@
 
 package com.btmatthews.maven.plugins.emailserver.test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.Assert.*;
 
 import com.btmatthews.maven.plugins.emailserver.greenmail.GreenmailMailServer;
 import com.btmatthews.maven.plugins.emailserver.greenmail.GreenmailMailServerFactory;
 import com.btmatthews.utils.monitor.Server;
 import com.btmatthews.utils.monitor.ServerFactory;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  * Unit test {@link GreenmailMailServerFactory}.
- * 
+ *
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0
  */
@@ -44,9 +41,9 @@ public class TestGreenmailMailServerFactory {
     /**
      * Prepare for the unit test execution by creating the server factory.
      */
-   @Before
+    @Before
     public void setUp() {
-	serverFactory = new GreenmailMailServerFactory();
+        serverFactory = new GreenmailMailServerFactory();
     }
 
     /**
@@ -54,7 +51,7 @@ public class TestGreenmailMailServerFactory {
      */
     @Test
     public void testGetServerName() {
-	assertEquals("greenmail", serverFactory.getServerName());
+        assertEquals("greenmail", serverFactory.getServerName());
     }
 
     /**
@@ -63,8 +60,8 @@ public class TestGreenmailMailServerFactory {
      */
     @Test
     public void testCreateServer() {
-	final Server server = serverFactory.createServer();
-	assertNotNull(server);
-	assertTrue(server instanceof GreenmailMailServer);
+        final Server server = serverFactory.createServer();
+        assertNotNull(server);
+        assertTrue(server instanceof GreenmailMailServer);
     }
 }

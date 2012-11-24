@@ -16,21 +16,18 @@
 
 package com.btmatthews.maven.plugins.emailserver.test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.Assert.*;
 
 import com.btmatthews.maven.plugins.emailserver.subethasmtp.SubEthaSMTPMailServer;
 import com.btmatthews.maven.plugins.emailserver.subethasmtp.SubEthaSMTPMailServerFactory;
 import com.btmatthews.utils.monitor.Server;
 import com.btmatthews.utils.monitor.ServerFactory;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  * Unit test {@link SubEthaSMTPMailServerFactory}.
- * 
+ *
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0
  */
@@ -46,7 +43,7 @@ public class TestSubEthaMailServerFactory {
      */
     @Before
     public void setUp() {
-	serverFactory = new SubEthaSMTPMailServerFactory();
+        serverFactory = new SubEthaSMTPMailServerFactory();
     }
 
     /**
@@ -54,7 +51,7 @@ public class TestSubEthaMailServerFactory {
      */
     @Test
     public void testGetServerName() {
-	assertEquals("subethasmtp", serverFactory.getServerName());
+        assertEquals("subethasmtp", serverFactory.getServerName());
     }
 
     /**
@@ -63,8 +60,8 @@ public class TestSubEthaMailServerFactory {
      */
     @Test
     public void testCreateServer() {
-	final Server server = serverFactory.createServer();
-	assertNotNull(server);
-	assertTrue(server instanceof SubEthaSMTPMailServer);
+        final Server server = serverFactory.createServer();
+        assertNotNull(server);
+        assertTrue(server instanceof SubEthaSMTPMailServer);
     }
 }

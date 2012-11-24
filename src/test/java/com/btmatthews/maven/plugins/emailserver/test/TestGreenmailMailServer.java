@@ -20,7 +20,7 @@ import com.btmatthews.maven.plugins.emailserver.greenmail.GreenmailMailServer;
 
 /**
  * Unit test {@link GreenmailMailServer}.
- * 
+ *
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0
  */
@@ -31,6 +31,6 @@ public class TestGreenmailMailServer extends AbstractMailServerTest {
      * offset and using SMTP.
      */
     public TestGreenmailMailServer() {
-	super(new GreenmailMailServer(), 0, false);
+        super(new GreenmailMailServer(), 0, false);
     }
 }

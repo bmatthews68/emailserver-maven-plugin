@@ -23,14 +23,14 @@ import com.btmatthews.utils.monitor.Logger;
 
 /**
  * Abstract base class for mail servers.
- * 
+ *
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0
  */
 public abstract class AbstractMailServer implements MailServer {
 
     private ResourceBundle bundle = ResourceBundle
-	    .getBundle("com.btmatthews.maven.plugins.emailserver.messages");
+            .getBundle("com.btmatthews.maven.plugins.emailserver.messages");
 
     /**
      * The port offset applied to the standard mail protocol ports.
@@ -45,75 +45,68 @@ public abstract class AbstractMailServer implements MailServer {
     /**
      * Sets the offset that will be applied to the standard port numbers for the
      * mail protocols.
-     * 
-     * @param offset
-     *            The port offset.
+     *
+     * @param offset The port offset.
      */
     public final void setPortOffset(final int offset) {
-	portOffset = offset;
+        portOffset = offset;
     }
 
     /**
      * Indicates whether the mail protocols should be secured using SSL/TLS.
-     * 
-     * @param use
-     *            <ul>
+     *
+     * @param use <ul>
      *            <li>{@code true} - SSL/TLS will be used.</li>
      *            <li>{@code false} - SSL/TLS will not be used.</li>
      *            </ul>
      */
     public final void setUseSSL(final boolean use) {
-	useSSL = use;
+        useSSL = use;
     }
 
     /**
      * Gets the offset that will be applied to the standard port numbers for the
      * mail protocols.
-     * 
+     *
      * @return The port offset.
      */
     protected final int getPortOffset() {
-	return portOffset;
+        return portOffset;
     }
 
     /**
      * Indicates whether the mail protocols should be secured using SSL/TLS.
-     * 
+     *
      * @return <ul>
      *         <li>{@code true} - SSL/TLS will be used.</li>
      *         <li>{@code false} - SSL/TLS will not be used.</li>
      *         </ul>
      */
     protected final boolean isUseSSL() {
-	return useSSL;
+        return useSSL;
     }
 
     /**
      * Write a message to the log bundle.
-     * 
-     * @param logger
-     *            The logger.
-     * @param key
-     *            The message key.
+     *
+     * @param logger The logger.
+     * @param key    The message key.
      */
     protected final void logInfo(final Logger logger, final String key) {
-	logInfo(logger, key, new Object[0]);
+        logInfo(logger, key, new Object[0]);
     }
 
     /**
      * Write a parameterised message to the log bundle.
-     * 
-     * @param logger
-     *            The logger.
-     * @param key
-     *            The message key.
-     * @param params
-     *            The message parameters.
+     *
+     * @param logger The logger.
+     * @param key    The message key.
+     * @param params The message parameters.
      */
     protected final void logInfo(final Logger logger, final String key,
-	    final Object[] params) {
-	final String format = bundle.getString(key);
-	final String message = MessageFormat.format(format, params);
-	logger.logInfo(message);
+                                 final Object[] params) {
+        final String format = bundle.getString(key);
+        final String message = MessageFormat.format(format, params);
+        logger.logInfo(message);
     }
 }

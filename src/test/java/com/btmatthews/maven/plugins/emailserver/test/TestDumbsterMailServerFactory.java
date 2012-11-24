@@ -16,21 +16,18 @@
 
 package com.btmatthews.maven.plugins.emailserver.test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.Assert.*;
 
 import com.btmatthews.maven.plugins.emailserver.dumbster.DumbsterMailServer;
 import com.btmatthews.maven.plugins.emailserver.dumbster.DumbsterMailServerFactory;
 import com.btmatthews.utils.monitor.Server;
 import com.btmatthews.utils.monitor.ServerFactory;
+import org.junit.Before;
+import org.junit.Test;
 
 /**
  * Unit test {@link DumbsterMailServerFactory}.
- * 
+ *
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0
  */
@@ -39,14 +36,14 @@ public class TestDumbsterMailServerFactory {
     /**
      * The server factory.
      */
-   private ServerFactory serverFactory;
+    private ServerFactory serverFactory;
 
     /**
      * Prepare for the unit test execution by creating the server factory.
      */
     @Before
     public void setUp() {
-	serverFactory = new DumbsterMailServerFactory();
+        serverFactory = new DumbsterMailServerFactory();
     }
 
     /**
@@ -54,7 +51,7 @@ public class TestDumbsterMailServerFactory {
      */
     @Test
     public void testGetServerName() {
-	assertEquals("dumbster", serverFactory.getServerName());
+        assertEquals("dumbster", serverFactory.getServerName());
     }
 
     /**
@@ -63,8 +60,8 @@ public class TestDumbsterMailServerFactory {
      */
     @Test
     public void testCreateServer() {
-	final Server server = serverFactory.createServer();
-	assertNotNull(server);
-	assertTrue(server instanceof DumbsterMailServer);
+        final Server server = serverFactory.createServer();
+        assertNotNull(server);
+        assertTrue(server instanceof DumbsterMailServer);
     }
 }

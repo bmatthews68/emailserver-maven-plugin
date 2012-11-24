@@ -23,7 +23,7 @@ import com.dumbster.smtp.SimpleSmtpServer;
 /**
  * Encapsulates the <a href="http://quintanasoft.com/dumbster/">Dumbster</a>
  * fake SMTP server allowing it to be controlled by a monitor.
- * 
+ *
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0
  */
@@ -36,27 +36,25 @@ public final class DumbsterMailServer extends AbstractMailServer {
 
     /**
      * Start the Dumbster mail server.
-     * 
-     * @param logger
-     *            Used to log error messages.
+     *
+     * @param logger Used to log error messages.
      */
     public void start(final Logger logger) {
-	logInfo(logger, "com.btmatthews.maven.plugin.emailserver.dumbster.starting");
-	server = SimpleSmtpServer.start(DEFAULT_SMTP_PORT + getPortOffset());
-	logInfo(logger, "com.btmatthews.maven.plugin.emailserver.dumbster.started");
+        logInfo(logger, "com.btmatthews.maven.plugin.emailserver.dumbster.starting");
+        server = SimpleSmtpServer.start(DEFAULT_SMTP_PORT + getPortOffset());
+        logInfo(logger, "com.btmatthews.maven.plugin.emailserver.dumbster.started");
     }
 
     /**
      * Stop the Dumbster mail server.
-     * 
-     * @param logger
-     *            Used to log error messages.
+     *
+     * @param logger Used to log error messages.
      */
     public void stop(final Logger logger) {
-	logInfo(logger, "com.btmatthews.maven.plugin.emailserver.greenmail.stopping");
-	if (server != null) {
-	    server.stop();
-	}
-	logInfo(logger, "com.btmatthews.maven.plugin.emailserver.greenmail.stopped");
+        logInfo(logger, "com.btmatthews.maven.plugin.emailserver.greenmail.stopping");
+        if (server != null) {
+            server.stop();
+        }
+        logInfo(logger, "com.btmatthews.maven.plugin.emailserver.greenmail.stopped");
     }
 }
