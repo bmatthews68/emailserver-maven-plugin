@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!-- 
-    Copyright 2011 Brian Matthews
+    Copyright 2011-2012 Brian Matthews
 	
 	Licensed under the Apache License, Version 2.0 (the "License");
 	you may not use this file except in compliance with the License.
@@ -14,15 +14,10 @@
 	See the License for the specific language governing permissions and
 	limitations under the License.
 -->
-<project xmlns="http://maven.apache.org/DECORATION/1.1.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="
-        http://maven.apache.org/DECORATION/1.1.0
-        http://maven.apache.org/xsd/decoration-1.1.0.xsd"
-	name="In-Memory Database Maven Plugin">
+<project name="e-Mail Server Plugin">
 	<googleAnalyticsAccountId>UA-5713196-10</googleAnalyticsAccountId>
 	<bannerLeft>
-		<name>GreenMail Maven Plugin</name>
+		<name>e-Mail Server Plugin</name>
 		<href>http://emailserver-maven-plugin.btmatthews.com</href>
 	</bannerLeft>
 	<publishDate format="dd MMM yyyy" position="left" />
