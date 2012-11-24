@@ -9,8 +9,8 @@
     <copyright>&#169;2011 - 2012 Brian Matthews</copyright>
     <item>
       <title>File: 18,
-             Errors: 2,
-             Warnings: 1,
+             Errors: 0,
+             Warnings: 13,
              Infos: 0
       </title>
             <link>http://emailserver-maven-plugin.btmatthews.com/checkstyle.html</link>
@@ -105,7 +105,7 @@
                   0
                 </td>
                 <td>
-                  0
+                  6
                 </td>
                 <td>
                   0
@@ -189,10 +189,10 @@
                   0
                 </td>
                 <td>
-                  0
+                  1
                 </td>
                 <td>
-                  1
+                  0
                 </td>
               </tr>
                           <tr>
@@ -203,7 +203,7 @@
                   0
                 </td>
                 <td>
-                  0
+                  2
                 </td>
                 <td>
                   0
@@ -231,10 +231,10 @@
                   0
                 </td>
                 <td>
-                  0
+                  3
                 </td>
                 <td>
-                  1
+                  0
                 </td>
               </tr>
                           <tr>
