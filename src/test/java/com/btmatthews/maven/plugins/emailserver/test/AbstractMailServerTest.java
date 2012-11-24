@@ -25,7 +25,6 @@ import com.btmatthews.maven.plugins.emailserver.MailServer;
 import com.btmatthews.utils.monitor.Logger;
 import com.icegreen.greenmail.util.GreenMailUtil;
 import com.icegreen.greenmail.util.ServerSetup;
-import com.icegreen.greenmail.util.ServerSetupTest;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -68,19 +67,10 @@ public abstract class AbstractMailServerTest {
         mailServer = server;
         mailServer.setPortOffset(portOffset);
         mailServer.setUseSSL(useSSL);
-        if (portOffset != 0) {
-            ServerSetupTest.setPortOffset(portOffset);
-            if (useSSL) {
-                serverSetup = ServerSetupTest.SMTPS;
-            } else {
-                serverSetup = ServerSetupTest.SMTP;
-            }
+        if (useSSL) {
+            serverSetup = new ServerSetup(465 + portOffset, null, ServerSetup.PROTOCOL_SMTPS);
         } else {
-            if (useSSL) {
-                serverSetup = ServerSetup.SMTPS;
-            } else {
-                serverSetup = ServerSetup.SMTP;
-            }
+            serverSetup = new ServerSetup(25 + portOffset, null, ServerSetup.PROTOCOL_SMTP);
         }
     }
 
