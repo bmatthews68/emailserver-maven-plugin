@@ -63,10 +63,11 @@ public abstract class AbstractMailServerTest {
      * @param useSSL     If we are to test using SSL/TLS.
      */
     protected AbstractMailServerTest(final MailServer server,
-                                     final int portOffset, final boolean useSSL) {
+                                     final int portOffset,
+                                     final boolean useSSL) {
         mailServer = server;
-        mailServer.setPortOffset(portOffset);
-        mailServer.setUseSSL(useSSL);
+        mailServer.configure("portOffset", Integer.valueOf(portOffset), null);
+        mailServer.configure("useSSL", Boolean.valueOf(useSSL), null);
         if (useSSL) {
             serverSetup = new ServerSetup(465 + portOffset, null, ServerSetup.PROTOCOL_SMTPS);
         } else {

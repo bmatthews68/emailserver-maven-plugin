@@ -36,22 +36,4 @@ public interface MailServer extends Server {
      * The default port for the SMTPS protocol.
      */
     int DEFAULT_SMTPS_PORT = 465;
-
-    /**
-     * Sets the offset that will be applied to the standard port numbers for the
-     * mail protocols.
-     *
-     * @param offset The port offset.
-     */
-    void setPortOffset(int offset);
-
-    /**
-     * Indicates whether the mail protocols should be secured using SSL/TLS.
-     *
-     * @param useSSL <ul>
-     *               <li>{@code true} - SSL/TLS will be used.</li>
-     *               <li>{@code false} - SSL/TLS will not be used.</li>
-     *               </ul>
-     */
-    void setUseSSL(boolean useSSL);
 }

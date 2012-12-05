@@ -19,6 +19,7 @@ package com.btmatthews.maven.plugins.emailserver;
 import java.text.MessageFormat;
 import java.util.ResourceBundle;
 
+import com.btmatthews.utils.monitor.AbstractServer;
 import com.btmatthews.utils.monitor.Logger;
 
 /**
@@ -27,7 +28,7 @@ import com.btmatthews.utils.monitor.Logger;
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0
  */
-public abstract class AbstractMailServer implements MailServer {
+public abstract class AbstractMailServer extends AbstractServer implements MailServer {
 
     private ResourceBundle bundle = ResourceBundle
             .getBundle("com.btmatthews.maven.plugins.emailserver.messages");
@@ -43,25 +44,19 @@ public abstract class AbstractMailServer implements MailServer {
     private boolean useSSL;
 
     /**
-     * Sets the offset that will be applied to the standard port numbers for the
-     * mail protocols.
+     * Configure the mail server.
      *
-     * @param offset The port offset.
+     * @param name   The property name.
+     * @param value  The property value.
+     * @param logger Used to log error messages.
+     * @see com.btmatthews.utils.monitor.Server#configure(String, Object, com.btmatthews.utils.monitor.Logger)
      */
-    public final void setPortOffset(final int offset) {
-        portOffset = offset;
-    }
-
-    /**
-     * Indicates whether the mail protocols should be secured using SSL/TLS.
-     *
-     * @param use <ul>
-     *            <li>{@code true} - SSL/TLS will be used.</li>
-     *            <li>{@code false} - SSL/TLS will not be used.</li>
-     *            </ul>
-     */
-    public final void setUseSSL(final boolean use) {
-        useSSL = use;
+    public void configure(final String name, final Object value, final Logger logger) {
+        if ("portOffset".equals(name)) {
+            portOffset = (Integer)value;
+        } else if ("useSSL".equals(name)) {
+            useSSL = (Boolean)value;
+        }
     }
 
     /**
@@ -85,6 +80,7 @@ public abstract class AbstractMailServer implements MailServer {
     protected final boolean isUseSSL() {
         return useSSL;
     }
+
 
     /**
      * Write a message to the log bundle.
