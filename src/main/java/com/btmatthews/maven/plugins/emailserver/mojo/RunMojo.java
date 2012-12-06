@@ -28,12 +28,12 @@ import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 
 /**
- * Run the mail server(s).
+ * Run the e-mail server.
  *
  * @author <a href="mailto:brian@btmatthews.com">Brian Matthews</a>
  * @since 1.0.0
  */
-@Mojo(name = "run", defaultPhase = LifecyclePhase.TEST_COMPILE)
+@Mojo(name = "run", defaultPhase = LifecyclePhase.PRE_INTEGRATION_TEST)
 public class RunMojo extends AbstractRunMojo {
 
     /**
