@@ -8,9 +8,9 @@
     <language>en-us</language>
     <copyright>&#169;2011 - 2012 Brian Matthews</copyright>
     <item>
-      <title>File: 18,
+      <title>File: 17,
              Errors: 0,
-             Warnings: 13,
+             Warnings: 17,
              Infos: 0
       </title>
             <link>http://emailserver-maven-plugin.btmatthews.com/checkstyle.html</link>
@@ -133,7 +133,7 @@
                   0
                 </td>
                 <td>
-                  0
+                  1
                 </td>
                 <td>
                   0
@@ -189,21 +189,7 @@
                   0
                 </td>
                 <td>
-                  1
-                </td>
-                <td>
                   0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://emailserver-maven-plugin.btmatthews.com/checkstyle.html#com.btmatthews.maven.plugins.emailserver.mojo.AbstractServerMojo.java">com/btmatthews/maven/plugins/emailserver/mojo/AbstractServerMojo.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  2
                 </td>
                 <td>
                   0
@@ -217,7 +203,7 @@
                   0
                 </td>
                 <td>
-                  1
+                  4
                 </td>
                 <td>
                   0
@@ -231,7 +217,7 @@
                   0
                 </td>
                 <td>
-                  3
+                  6
                 </td>
                 <td>
                   0
