@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "http://www.eclipse.org/jetty/configure.dtd">
+<Configure id="Server" class="org.eclipse.jetty.server.Server">
+
+    <New class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg>
+            <Ref id="Server" />
+        </Arg>
+        <Arg>mail/Session</Arg>
+        <Arg>
+            <New class="org.eclipse.jetty.jndi.factories.MailSessionReference">
+                <Set name="user">admin</Set>
+                <Set name="password">secret</Set>
+                <Set name="properties">
+                    <New class="java.util.Properties">
+                        <Put name="mail.user">admin</Put>
+                        <Put name="mail.password">secret</Put>
+                        <Put name="mail.transport.protocol">smtp</Put>
+                        <Put name="mail.smtp.host">localhost</Put>
+                        <Put name="mail.smtp.port">13025</Put>
+                        <Put name="mail.debug">true</Put>
+                    </New>
+                </Set>
+            </New>
+        </Arg>
+    </New>
+
+</Configure>
