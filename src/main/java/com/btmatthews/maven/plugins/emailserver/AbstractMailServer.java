@@ -31,6 +31,9 @@ import com.btmatthews.utils.monitor.Logger;
  */
 public abstract class AbstractMailServer extends AbstractServer implements MailServer {
 
+    /**
+     * Message resource bundle.
+     */
     private ResourceBundle bundle = ResourceBundle
             .getBundle("com.btmatthews.maven.plugins.emailserver.messages");
 
@@ -59,7 +62,7 @@ public abstract class AbstractMailServer extends AbstractServer implements MailS
      * @param logger Used to log error messages.
      * @see com.btmatthews.utils.monitor.Server#configure(String, Object, com.btmatthews.utils.monitor.Logger)
      */
-    public void configure(final String name, final Object value, final Logger logger) {
+    public final void configure(final String name, final Object value, final Logger logger) {
         if ("portOffset".equals(name)) {
             portOffset = (Integer)value;
         } else if ("useSSL".equals(name)) {
