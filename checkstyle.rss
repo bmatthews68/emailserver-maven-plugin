@@ -6,11 +6,11 @@
     <link>http://emailserver-maven-plugin.btmatthews.com</link>
     <description>e-Mail Server Plugin - Checkstyle report</description>
     <language>en-us</language>
-    <copyright>&#169;2011 - 2012 Brian Matthews</copyright>
+    <copyright>&#169;2011 - 2013 Brian Matthews</copyright>
     <item>
-      <title>File: 17,
+      <title>File: 18,
              Errors: 0,
-             Warnings: 17,
+             Warnings: 1,
              Infos: 0
       </title>
             <link>http://emailserver-maven-plugin.btmatthews.com/checkstyle.html</link>
@@ -105,7 +105,7 @@
                   0
                 </td>
                 <td>
-                  6
+                  0
                 </td>
                 <td>
                   0
@@ -203,7 +203,21 @@
                   0
                 </td>
                 <td>
-                  4
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://emailserver-maven-plugin.btmatthews.com/checkstyle.html#com.btmatthews.maven.plugins.emailserver.mojo.Mailbox.java">com/btmatthews/maven/plugins/emailserver/mojo/Mailbox.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
                 </td>
                 <td>
                   0
@@ -217,7 +231,7 @@
                   0
                 </td>
                 <td>
-                  6
+                  0
                 </td>
                 <td>
                   0

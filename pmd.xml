@@ -1,14 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd version="4.3" timestamp="2012-12-06T21:26:42.765">
-<file name="C:\Users\Brian\Documents\GitHub\emailserver-maven-plugin\target\checkout\src\main\java\com\btmatthews\maven\plugins\emailserver\mojo\RunMojo.java">
-<violation beginline="22" endline="22" begincolumn="1" endcolumn="59" rule="UnusedImports" ruleset="Import Statement Rules" package="com.btmatthews.maven.plugins.emailserver.mojo" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
-Avoid unused imports such as 'com.btmatthews.maven.plugins.emailserver.MailServer'
-</violation>
-<violation beginline="23" endline="23" begincolumn="1" endcolumn="50" rule="UnusedImports" ruleset="Import Statement Rules" package="com.btmatthews.maven.plugins.emailserver.mojo" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
-Avoid unused imports such as 'com.btmatthews.utils.monitor.ServerFactory'
-</violation>
-<violation beginline="24" endline="24" begincolumn="1" endcolumn="57" rule="UnusedImports" ruleset="Import Statement Rules" package="com.btmatthews.maven.plugins.emailserver.mojo" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
-Avoid unused imports such as 'com.btmatthews.utils.monitor.ServerFactoryLocator'
-</violation>
-</file>
+<pmd version="4.3" timestamp="2013-01-07T21:48:26.055">
 </pmd>
