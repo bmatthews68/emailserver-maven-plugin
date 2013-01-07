@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2012 Brian Matthews
+ * Copyright 2011-2013 Brian Matthews
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,6 @@ public class TestSecureGreenmailMailServer extends AbstractMailServerTest {
      * offset and using SMTPS.
      */
     public TestSecureGreenmailMailServer() {
-        super(new GreenmailMailServer(), 0, true);
+        super(new GreenmailMailServer(), 0, true, null);
     }
 }

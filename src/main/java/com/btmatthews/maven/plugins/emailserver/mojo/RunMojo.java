@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2012 Brian Matthews
+ * Copyright 2011-2013 Brian Matthews
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,6 +60,9 @@ public class RunMojo extends AbstractRunMojo {
     @Parameter(property = "emailServer.useSSL", defaultValue = "false")
     private boolean useSSL = false;
 
+    @Parameter
+    private Mailbox[] mailboxes;
+
     /**
      * Return the identifier for the server type.
      *
@@ -80,6 +83,9 @@ public class RunMojo extends AbstractRunMojo {
         final Map<String, Object> config = new HashMap<String, Object>();
         config.put("portOffset", Integer.valueOf(portOffset));
         config.put("useSSL", Boolean.valueOf(useSSL));
+        config.put("mailboxes", mailboxes);
         return config;
     }
+
+
 }

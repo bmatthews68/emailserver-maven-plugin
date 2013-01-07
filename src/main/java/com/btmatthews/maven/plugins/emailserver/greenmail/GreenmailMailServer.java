@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2012 Brian Matthews
+ * Copyright 2011-2013 Brian Matthews
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@
 package com.btmatthews.maven.plugins.emailserver.greenmail;
 
 import com.btmatthews.maven.plugins.emailserver.AbstractMailServer;
+import com.btmatthews.maven.plugins.emailserver.mojo.Mailbox;
 import com.btmatthews.utils.monitor.Logger;
 import com.icegreen.greenmail.util.GreenMail;
 import com.icegreen.greenmail.util.ServerSetup;
@@ -44,6 +45,14 @@ public final class GreenmailMailServer extends AbstractMailServer {
         logInfo(logger, "com.btmatthews.maven.plugin.emailserver.greenmail.starting");
         final ServerSetup[] serverSetups = getServerSetups();
         greenMail = new GreenMail(serverSetups);
+        final Mailbox[] mailboxes = getMailboxes();
+        if (mailboxes != null) {
+            for (final Mailbox mailbox : getMailboxes()) {
+                if (mailbox.isValid()) {
+                    greenMail.setUser(mailbox.getEmail(), mailbox.getLogin(), mailbox.getPassword());
+                }
+            }
+        }
         greenMail.start();
         logInfo(logger, "com.btmatthews.maven.plugin.emailserver.greenmail.started");
     }

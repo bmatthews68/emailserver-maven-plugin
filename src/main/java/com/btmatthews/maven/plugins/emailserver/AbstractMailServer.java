@@ -19,6 +19,7 @@ package com.btmatthews.maven.plugins.emailserver;
 import java.text.MessageFormat;
 import java.util.ResourceBundle;
 
+import com.btmatthews.maven.plugins.emailserver.mojo.Mailbox;
 import com.btmatthews.utils.monitor.AbstractServer;
 import com.btmatthews.utils.monitor.Logger;
 
@@ -44,6 +45,13 @@ public abstract class AbstractMailServer extends AbstractServer implements MailS
     private boolean useSSL;
 
     /**
+     * The mailboxes that will be configured in the mail server.
+     *
+     * @since 1.1.0
+     */
+    private Mailbox[] mailboxes;
+
+    /**
      * Configure the mail server.
      *
      * @param name   The property name.
@@ -56,6 +64,8 @@ public abstract class AbstractMailServer extends AbstractServer implements MailS
             portOffset = (Integer)value;
         } else if ("useSSL".equals(name)) {
             useSSL = (Boolean)value;
+        } else if ("mailboxes".equals(name)) {
+            mailboxes = (Mailbox[])value;
         }
     }
 
@@ -81,6 +91,15 @@ public abstract class AbstractMailServer extends AbstractServer implements MailS
         return useSSL;
     }
 
+    /**
+     * Get the mailboxes that will be configured in the mail server.
+     *
+     * @return An array of {@link Mailbox} objects.
+     * @since 1.1.0
+     */
+    protected final Mailbox[] getMailboxes() {
+        return mailboxes;
+    }
 
     /**
      * Write a message to the log bundle.

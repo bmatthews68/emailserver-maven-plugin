@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2012 Brian Matthews
+ * Copyright 2011-2013 Brian Matthews
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,6 @@ public class TestSubEthaMailServer extends AbstractMailServerTest {
      * offset and using SMTP.
      */
     public TestSubEthaMailServer() {
-        super(new SubEthaSMTPMailServer(), 0, false);
+        super(new SubEthaSMTPMailServer(), 0, false, null);
     }
 }

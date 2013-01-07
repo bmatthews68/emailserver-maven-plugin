@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2012 Brian Matthews
+ * Copyright 2011-2013 Brian Matthews
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import javax.mail.MessagingException;
 import javax.mail.internet.AddressException;
 
 import com.btmatthews.maven.plugins.emailserver.MailServer;
+import com.btmatthews.maven.plugins.emailserver.mojo.Mailbox;
 import com.btmatthews.utils.monitor.Logger;
 import com.icegreen.greenmail.util.GreenMailUtil;
 import com.icegreen.greenmail.util.ServerSetup;
@@ -50,6 +51,21 @@ public abstract class AbstractMailServerTest {
     private MailServer mailServer;
 
     /**
+     * The port offset.
+     */
+    private int portOffset;
+
+    /**
+     * If we are to test using SSL/TLS.
+     */
+    private boolean useSSL;
+
+    /**
+     * The mailboxes to be configured.
+     */
+    private Mailbox[] mailboxes;
+
+    /**
      * The server setup used to send the test e-mail.
      */
     private ServerSetup serverSetup;
@@ -61,13 +77,16 @@ public abstract class AbstractMailServerTest {
      * @param server     The mail server.
      * @param portOffset The port offset.
      * @param useSSL     If we are to test using SSL/TLS.
+     * @param mailboxes  The mailboxes to be configured.
      */
     protected AbstractMailServerTest(final MailServer server,
                                      final int portOffset,
-                                     final boolean useSSL) {
+                                     final boolean useSSL,
+                                     final Mailbox[] mailboxes) {
         mailServer = server;
-        mailServer.configure("portOffset", Integer.valueOf(portOffset), null);
-        mailServer.configure("useSSL", Boolean.valueOf(useSSL), null);
+        this.useSSL = useSSL;
+        this.portOffset = portOffset;
+        this.mailboxes = mailboxes;
         if (useSSL) {
             serverSetup = new ServerSetup(465 + portOffset, null, ServerSetup.PROTOCOL_SMTPS);
         } else {
@@ -81,6 +100,9 @@ public abstract class AbstractMailServerTest {
     @Before
     public void setUp() {
         initMocks(this);
+        mailServer.configure("portOffset", Integer.valueOf(portOffset), logger);
+        mailServer.configure("useSSL", Boolean.valueOf(useSSL), logger);
+        mailServer.configure("mailboxes", mailboxes, logger);
         mailServer.start(logger);
     }
 
