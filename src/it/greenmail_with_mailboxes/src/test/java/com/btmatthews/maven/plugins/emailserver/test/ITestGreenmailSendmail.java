@@ -61,7 +61,7 @@ public class ITestGreenmailSendmail {
 
         final Properties props = new Properties();
         final Session session = Session.getInstance(props);
-        final URLName urlName = new URLName("imap", "localhost", 110, null, "brian", "everclear");
+        final URLName urlName = new URLName("imap", "localhost", 143, null, "brian", "everclear");
         final Store store = session.getStore(urlName);
         store.connect();
         try {
