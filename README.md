@@ -15,7 +15,8 @@ The following fake e-mail servers are supported:
 Example
 -------
 The **e-Mail Server Maven Plugin** can be used to automate integration tests without having a dependency on an
-external e-mail server.
+external e-mail server. The full source for this example is available in the
+[webapp](https://github.com/bmatthews68/emailserver-maven-plugin/tree/master/src/it/webapp) integration test.
 
 ### pom.xml
 
@@ -57,6 +58,11 @@ The POM shows how a fake e-mail server can be used to help automate integration 
               <portOffset>13000</portOffset>
               <useSSL>false</useSSL>
               <mailboxes>
+                <mailbox>
+                  <login>admin</login>
+                  <password>secret</password>
+                  <email>admin@btmatthews.com</email>
+                </mailbox>
                 <mailbox>
                   <login>brian</login>
                   <password>everclear</password>
@@ -122,6 +128,13 @@ The **e-Mail Server Maven Plugin** is configured here to shutdown the **Greenmai
             </goals>
           </execution>
         </executions>
+        <dependencies>
+          <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.5</version>
+          </dependency>
+        </dependencies>
       </plugin>
 ```
 
@@ -142,6 +155,10 @@ The **Jetty Maven Plugin** is configured here to launch and shutdown during the 
         </executions>
       </plugin>
 ```
+
+The **Maven Failsafe Plugin** runs the integration tests defined in the project during the **integration-test** phase
+of the build life-cycle.
+
 ```xml
     </plugins>
   </build>
@@ -150,6 +167,12 @@ The **Jetty Maven Plugin** is configured here to launch and shutdown during the 
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
       <version>3.0.1</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>javax.mail</groupId>
+      <artifactId>mail</artifactId>
+      <version>1.4.5</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
@@ -173,22 +196,29 @@ integration tests.
 
 ### jetty.xml
 
-Add the following frame of XML to the jetty.xml configuration file to define the mail session.
+Add the following frame of XML to the **jetty.xml** configuration file to define the mail session.
 
 ```xml
-<New>
+<New class="org.eclipse.jetty.plus.jndi.Resource">
   <Arg>
-    <plugins>
-      <plugin>
-        <groupId>com.btmatthews.maven.plugins</groupId>
-        <artifactId>crx-maven-plugin</artifactId>
-        <version>1.0.0</version>
-        <configuration>
-          <crxPEMFile>${user.home}/crx.pem</crxPEMFile>
-          <crxPEMPassword>SparkleAndFade</crxPEMPassword>
-        </configuration>
-      </plugin>
-    </plugins>
+    <Ref id="Server" />
+  </Arg>
+  <Arg>mail/Session</Arg>
+  <Arg>
+    <New class="org.eclipse.jetty.jndi.factories.MailSessionReference">
+      <Set name="user">admin</Set>
+      <Set name="password">secret</Set>
+      <Set name="properties">
+        <New class="java.util.Properties">
+          <Put name="mail.user">admin</Put>
+          <Put name="mail.password">secret</Put>
+          <Put name="mail.transport.protocol">smtp</Put>
+          <Put name="mail.smtp.host">localhost</Put>
+          <Put name="mail.smtp.port">13025</Put>
+          <Put name="mail.debug">true</Put>
+        </New>
+      </Set>
+    </New>
   </Arg>
 </New>
 ```
@@ -200,8 +230,8 @@ inside the web application.
 
 ```xml
 <resource-ref>
-  <res-ref-name></res-ref-name>
-  <res-type></res-type>
+  <res-ref-name>mail/Session</res-ref-name>
+  <res-type>javax.mail.Session</res-type>
   <res-auth>Container</res-auth>
 </resource-ref>
 ```
@@ -216,7 +246,7 @@ coordinates:
     <groupId>com.btmatthews.maven.plugins</groupId>
     <artifactId>emailserver-maven-plugin</artifactId>
     <version>1.1.0</version>
-</plugin
+</plugin>
 ```
 
 License & Source Code
