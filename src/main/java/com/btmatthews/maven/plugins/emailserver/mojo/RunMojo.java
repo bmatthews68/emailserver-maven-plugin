@@ -19,9 +19,6 @@ package com.btmatthews.maven.plugins.emailserver.mojo;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.btmatthews.maven.plugins.emailserver.MailServer;
-import com.btmatthews.utils.monitor.ServerFactory;
-import com.btmatthews.utils.monitor.ServerFactoryLocator;
 import com.btmatthews.utils.monitor.mojo.AbstractRunMojo;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
@@ -34,10 +31,10 @@ import org.apache.maven.plugins.annotations.Parameter;
  * @since 1.0.0
  */
 @Mojo(name = "run", defaultPhase = LifecyclePhase.PRE_INTEGRATION_TEST)
-public class RunMojo extends AbstractRunMojo {
+public final class RunMojo extends AbstractRunMojo {
 
     /**
-     * The name of the server:
+     * The name of the server. The following server types are supported:
      * <ul>
      * <li>greenmail</li>
      * <li>dumbster</li>
@@ -60,6 +57,9 @@ public class RunMojo extends AbstractRunMojo {
     @Parameter(property = "emailServer.useSSL", defaultValue = "false")
     private boolean useSSL = false;
 
+    /**
+     * A list of mailboxes to be pre-configured during start-up.
+     */
     @Parameter
     private Mailbox[] mailboxes;
 
@@ -86,6 +86,4 @@ public class RunMojo extends AbstractRunMojo {
         config.put("mailboxes", mailboxes);
         return config;
     }
-
-
 }

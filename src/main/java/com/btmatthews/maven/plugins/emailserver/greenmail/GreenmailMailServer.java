@@ -82,15 +82,15 @@ public final class GreenmailMailServer extends AbstractMailServer {
     private ServerSetup[] getServerSetups() {
         if (isUseSSL()) {
             return new ServerSetup[]{
-                    new ServerSetup(465 + getPortOffset(), null, ServerSetup.PROTOCOL_SMTPS),
-                    new ServerSetup(995 + getPortOffset(), null, ServerSetup.PROTOCOL_POP3S),
-                    new ServerSetup(993 + getPortOffset(), null, ServerSetup.PROTOCOL_IMAPS)
+                    new ServerSetup(DEFAULT_SMTPS_PORT + getPortOffset(), null, ServerSetup.PROTOCOL_SMTPS),
+                    new ServerSetup(DEFAULT_POP3S_PORT + getPortOffset(), null, ServerSetup.PROTOCOL_POP3S),
+                    new ServerSetup(DEFAULT_IMAPS_PORT + getPortOffset(), null, ServerSetup.PROTOCOL_IMAPS)
             };
         } else {
             return new ServerSetup[]{
-                    new ServerSetup(25 + getPortOffset(), null, ServerSetup.PROTOCOL_SMTP),
-                    new ServerSetup(110 + getPortOffset(), null, ServerSetup.PROTOCOL_POP3),
-                    new ServerSetup(143 + getPortOffset(), null, ServerSetup.PROTOCOL_IMAP)
+                    new ServerSetup(DEFAULT_SMTP_PORT + getPortOffset(), null, ServerSetup.PROTOCOL_SMTP),
+                    new ServerSetup(DEFAULT_POP3_PORT + getPortOffset(), null, ServerSetup.PROTOCOL_POP3),
+                    new ServerSetup(DEFAULT_IMAP_PORT + getPortOffset(), null, ServerSetup.PROTOCOL_IMAP)
             };
         }
     }

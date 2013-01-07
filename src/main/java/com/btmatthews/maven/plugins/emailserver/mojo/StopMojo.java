@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2012 Brian Matthews
+ * Copyright 2011-2013 Brian Matthews
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,5 +27,5 @@ import org.apache.maven.plugins.annotations.Mojo;
  * @since 1.0.0
  */
 @Mojo(name = "stop", defaultPhase = LifecyclePhase.POST_INTEGRATION_TEST)
-public class StopMojo extends AbstractStopMojo {
+public final class StopMojo extends AbstractStopMojo {
 }

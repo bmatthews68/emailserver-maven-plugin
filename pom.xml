@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation=" http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation=" http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <prerequisites>
         <maven>3.0.4</maven>
     </prerequisites>
     <groupId>com.btmatthews.maven.plugins</groupId>
     <artifactId>emailserver-maven-plugin</artifactId>
-    <version>1.0.4-SNAPSHOT</version>
+    <version>1.1.0-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
     <name>e-Mail Server Plugin</name>
     <description>A Maven 3 plug-in that can be used to launch a mail server for use in integration tests.</description>
@@ -24,6 +25,9 @@
             <name>Brian Matthews</name>
             <email>brian@brianmatthews.me</email>
             <url>http://brianmatthews.me</url>
+            <properties>
+                <picUrl>http://www.gravatar.com/avatar/56de894e429e2eccac56e4b1b2b37764.png</picUrl>
+            </properties>
         </developer>
     </developers>
     <properties>
@@ -100,7 +104,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-invoker-plugin</artifactId>
-                <version>1.7</version>
+                <version>1.8</version>
                 <configuration>
                     <projectsDirectory>src/it</projectsDirectory>
                     <cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
@@ -168,6 +172,13 @@
                 <configuration>
                     <configLocation>checkstyle.xml</configLocation>
                 </configuration>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>checkstyle</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
             </plugin>
             <plugin>
                 <artifactId>maven-pmd-plugin</artifactId>
@@ -178,7 +189,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-surefire-report-plugin</artifactId>
-                <version>2.12.4</version>
+                <version>2.13</version>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>

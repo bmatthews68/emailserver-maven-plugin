@@ -23,7 +23,7 @@ import org.codehaus.plexus.util.StringUtils;
  *
  * @since 1.1.0
  */
-public class Mailbox {
+public final class Mailbox {
 
     /**
      * The login id for the mailbox.
@@ -38,7 +38,7 @@ public class Mailbox {
     /**
      * The e-mail address for the mailbox.
      */
-    public String email;
+    private String email;
 
     /**
      * Determine if the mailbox definition is valid. The mailbox definition is valid if at least the e-mail address
@@ -69,10 +69,10 @@ public class Mailbox {
     /**
      * Set the login id for the mailbox.
      *
-     * @param login The login id for the mailbox.
+     * @param value The login id for the mailbox.
      */
-    public void setLogin(final String login) {
-        this.login = login;
+    public void setLogin(final String value) {
+        login = value;
     }
 
     /**
@@ -91,10 +91,10 @@ public class Mailbox {
     /**
      * Set the login credentials for the mailbox.
      *
-     * @param password The login credentials for the mailbox.
+     * @param value The login credentials for the mailbox.
      */
-    public void setPassword(final String password) {
-        this.password = password;
+    public void setPassword(final String value) {
+        password = value;
     }
 
     /**
@@ -109,9 +109,9 @@ public class Mailbox {
     /**
      * Set the e-mail address for the mailbox.
      *
-     * @param email The e-mail address for the mailbox.
+     * @param value The e-mail address for the mailbox.
      */
-    public void setEmail(final String email) {
-        this.email = email;
+    public void setEmail(final String value) {
+        email = value;
     }
 }

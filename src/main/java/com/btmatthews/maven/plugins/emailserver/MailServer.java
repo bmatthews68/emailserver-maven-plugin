@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2012 Brian Matthews
+ * Copyright 2011-2013 Brian Matthews
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,7 +33,27 @@ public interface MailServer extends Server {
     int DEFAULT_SMTP_PORT = 25;
 
     /**
+     * The default port for the POP3 protocol.
+     */
+    int DEFAULT_POP3_PORT = 110;
+
+    /**
+     * The default port for the IMAP protocol.
+     */
+    int DEFAULT_IMAP_PORT = 143;
+
+    /**
      * The default port for the SMTPS protocol.
      */
     int DEFAULT_SMTPS_PORT = 465;
+
+    /**
+     * The default port for the POP3S protocol.
+     */
+    int DEFAULT_POP3S_PORT = 995;
+
+    /**
+     * The default port for the IMAPS protocol.
+     */
+    int DEFAULT_IMAPS_PORT = 993;
 }
