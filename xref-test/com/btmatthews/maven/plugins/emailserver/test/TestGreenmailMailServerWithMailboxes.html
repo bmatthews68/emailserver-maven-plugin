@@ -50,7 +50,7 @@
 <a class="jxr_linenumber" name="40" href="#40">40</a>  <em class="jxr_javadoccomment">     * offset and using SMTP.</em>
 <a class="jxr_linenumber" name="41" href="#41">41</a>  <em class="jxr_javadoccomment">     */</em>
 <a class="jxr_linenumber" name="42" href="#42">42</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../../../com/btmatthews/maven/plugins/emailserver/test/TestGreenmailMailServerWithMailboxes.html">TestGreenmailMailServerWithMailboxes</a>() {
-<a class="jxr_linenumber" name="43" href="#43">43</a>          <strong class="jxr_keyword">super</strong>(<strong class="jxr_keyword">new</strong> GreenmailMailServer(), 0, false, <strong class="jxr_keyword">new</strong> Mailbox[]{
+<a class="jxr_linenumber" name="43" href="#43">43</a>          <strong class="jxr_keyword">super</strong>(<strong class="jxr_keyword">new</strong> GreenmailMailServer(), 10000, false, <strong class="jxr_keyword">new</strong> Mailbox[]{
 <a class="jxr_linenumber" name="44" href="#44">44</a>                  createMailbox(<span class="jxr_string">"brian1"</span>, <span class="jxr_string">"everclear"</span>, <span class="jxr_string">"brian1@btmatthews.com"</span>),
 <a class="jxr_linenumber" name="45" href="#45">45</a>                  createMailbox(<span class="jxr_string">""</span>, <span class="jxr_string">"everclear"</span>, <span class="jxr_string">"brian2@btmatthews.com"</span>),
 <a class="jxr_linenumber" name="46" href="#46">46</a>                  createMailbox(<strong class="jxr_keyword">null</strong>, <span class="jxr_string">"everclear"</span>, <span class="jxr_string">"brian3@btmatthews.com"</span>),
@@ -146,12 +146,12 @@
 <a class="jxr_linenumber" name="136" href="#136">136</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> testPOP(<strong class="jxr_keyword">final</strong> String username, <strong class="jxr_keyword">final</strong> String password) <strong class="jxr_keyword">throws</strong> Exception {
 <a class="jxr_linenumber" name="137" href="#137">137</a>         <strong class="jxr_keyword">final</strong> Properties props = <strong class="jxr_keyword">new</strong> Properties();
 <a class="jxr_linenumber" name="138" href="#138">138</a>         props.setProperty(<span class="jxr_string">"mail.pop3.connectiontimeout"</span>, <span class="jxr_string">"5000"</span>);
-<a class="jxr_linenumber" name="139" href="#139">139</a>         testStore(props, <span class="jxr_string">"pop3"</span>, 110, username, password);
+<a class="jxr_linenumber" name="139" href="#139">139</a>         testStore(props, <span class="jxr_string">"pop3"</span>, 10110, username, password);
 <a class="jxr_linenumber" name="140" href="#140">140</a>     }
 <a class="jxr_linenumber" name="141" href="#141">141</a> 
 <a class="jxr_linenumber" name="142" href="#142">142</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">void</strong> testIMAP(<strong class="jxr_keyword">final</strong> String username, <strong class="jxr_keyword">final</strong> String password) <strong class="jxr_keyword">throws</strong> Exception {
 <a class="jxr_linenumber" name="143" href="#143">143</a>         <strong class="jxr_keyword">final</strong> Properties props = <strong class="jxr_keyword">new</strong> Properties();
-<a class="jxr_linenumber" name="144" href="#144">144</a>         testStore(props, <span class="jxr_string">"imap"</span>, 143, username, password);
+<a class="jxr_linenumber" name="144" href="#144">144</a>         testStore(props, <span class="jxr_string">"imap"</span>, 10143, username, password);
 <a class="jxr_linenumber" name="145" href="#145">145</a>     }
 <a class="jxr_linenumber" name="146" href="#146">146</a> 
 <a class="jxr_linenumber" name="147" href="#147">147</a>     <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">static</strong> <strong class="jxr_keyword">final</strong> Mailbox createMailbox(<strong class="jxr_keyword">final</strong> String login, <strong class="jxr_keyword">final</strong> String password, <strong class="jxr_keyword">final</strong> String email) {

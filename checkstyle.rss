@@ -8,9 +8,9 @@
     <language>en-us</language>
     <copyright>&#169;2011 - 2013 Brian Matthews</copyright>
     <item>
-      <title>File: 18,
-             Errors: 0,
-             Warnings: 1,
+      <title>File: 19,
+             Errors: 44,
+             Warnings: 0,
              Infos: 0
       </title>
             <link>http://emailserver-maven-plugin.btmatthews.com/checkstyle.html</link>
@@ -80,7 +80,21 @@
                   0
                 </td>
                 <td>
+                  4
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://emailserver-maven-plugin.btmatthews.com/checkstyle.html#com.btmatthews.maven.plugins.emailserver.messages.properties">com/btmatthews/maven/plugins/emailserver/messages.properties</a>
+                </td>
+                <td>
                   0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
                 </td>
               </tr>
                           <tr>
@@ -108,12 +122,26 @@
                   0
                 </td>
                 <td>
-                  0
+                  16
                 </td>
               </tr>
                           <tr>
                 <td>
                   <a href="http://emailserver-maven-plugin.btmatthews.com/checkstyle.html#com.btmatthews.maven.plugins.emailserver.greenmail.package-info.java">com/btmatthews/maven/plugins/emailserver/greenmail/package-info.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://emailserver-maven-plugin.btmatthews.com/checkstyle.html#com.btmatthews.maven.plugins.emailserver.package-info.java">com/btmatthews/maven/plugins/emailserver/package-info.java</a>
                 </td>
                 <td>
                   0
@@ -133,24 +161,10 @@
                   0
                 </td>
                 <td>
+                  0
+                </td>
+                <td>
                   1
-                </td>
-                <td>
-                  0
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://emailserver-maven-plugin.btmatthews.com/checkstyle.html#com.btmatthews.maven.plugins.emailserver.package-info.java">com/btmatthews/maven/plugins/emailserver/package-info.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
                 </td>
               </tr>
                           <tr>
@@ -164,7 +178,7 @@
                   0
                 </td>
                 <td>
-                  0
+                  1
                 </td>
               </tr>
                           <tr>
@@ -178,7 +192,7 @@
                   0
                 </td>
                 <td>
-                  0
+                  2
                 </td>
               </tr>
                           <tr>
@@ -206,7 +220,7 @@
                   0
                 </td>
                 <td>
-                  0
+                  7
                 </td>
               </tr>
                           <tr>
@@ -220,7 +234,7 @@
                   0
                 </td>
                 <td>
-                  0
+                  3
                 </td>
               </tr>
                           <tr>
@@ -234,7 +248,7 @@
                   0
                 </td>
                 <td>
-                  0
+                  2
                 </td>
               </tr>
                           <tr>
@@ -262,7 +276,7 @@
                   0
                 </td>
                 <td>
-                  0
+                  1
                 </td>
               </tr>
                           <tr>
@@ -276,7 +290,7 @@
                   0
                 </td>
                 <td>
-                  0
+                  5
                 </td>
               </tr>
                       </tbody>
