@@ -31,6 +31,6 @@ public class TestGreenmailMailServer extends AbstractMailServerTest {
      * offset and using SMTP.
      */
     public TestGreenmailMailServer() {
-        super(new GreenmailMailServer(), 0, false, null);
+        super(new GreenmailMailServer(), 10000, false, null);
     }
 }

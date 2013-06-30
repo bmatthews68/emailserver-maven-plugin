@@ -40,7 +40,7 @@ public class TestGreenmailMailServerWithMailboxes extends AbstractMailServerTest
      * offset and using SMTP.
      */
     public TestGreenmailMailServerWithMailboxes() {
-        super(new GreenmailMailServer(), 0, false, new Mailbox[]{
+        super(new GreenmailMailServer(), 10000, false, new Mailbox[]{
                 createMailbox("brian1", "everclear", "brian1@btmatthews.com"),
                 createMailbox("", "everclear", "brian2@btmatthews.com"),
                 createMailbox(null, "everclear", "brian3@btmatthews.com"),
@@ -136,12 +136,12 @@ public class TestGreenmailMailServerWithMailboxes extends AbstractMailServerTest
     private void testPOP(final String username, final String password) throws Exception {
         final Properties props = new Properties();
         props.setProperty("mail.pop3.connectiontimeout", "5000");
-        testStore(props, "pop3", 110, username, password);
+        testStore(props, "pop3", 10110, username, password);
     }
 
     private void testIMAP(final String username, final String password) throws Exception {
         final Properties props = new Properties();
-        testStore(props, "imap", 143, username, password);
+        testStore(props, "imap", 10143, username, password);
     }
 
     private static final Mailbox createMailbox(final String login, final String password, final String email) {

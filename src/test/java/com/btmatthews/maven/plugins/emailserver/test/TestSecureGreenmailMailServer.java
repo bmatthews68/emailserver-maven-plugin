@@ -31,6 +31,6 @@ public class TestSecureGreenmailMailServer extends AbstractMailServerTest {
      * offset and using SMTPS.
      */
     public TestSecureGreenmailMailServer() {
-        super(new GreenmailMailServer(), 0, true, null);
+        super(new GreenmailMailServer(), 10000, true, null);
     }
 }

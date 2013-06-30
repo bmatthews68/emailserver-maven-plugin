@@ -31,6 +31,6 @@ public class TestSubEthaMailServer extends AbstractMailServerTest {
      * offset and using SMTP.
      */
     public TestSubEthaMailServer() {
-        super(new SubEthaSMTPMailServer(), 0, false, null);
+        super(new SubEthaSMTPMailServer(), 10000, false, null);
     }
 }

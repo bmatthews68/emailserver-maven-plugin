@@ -31,6 +31,6 @@ public class TestDumbsterMailServer extends AbstractMailServerTest {
      * offset and using SMTP.
      */
     public TestDumbsterMailServer() {
-        super(new DumbsterMailServer(), 0, false, null);
+        super(new DumbsterMailServer(), 10000, false, null);
     }
 }
