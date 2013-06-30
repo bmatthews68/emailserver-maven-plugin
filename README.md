@@ -40,7 +40,7 @@ The POM shows how a fake e-mail server can be used to help automate integration 
       <plugin>
         <groupId>com.btmatthews.maven.plugins</groupId>
         <artifactId>emailserver-maven-plugin</artifactId>
-        <version>1.1.0</version>
+        <version>1.1.1</version>
         <configuration>
           <monitorKey>emailserver</monitorKey>
           <monitorPort>10025</monitorPort>
@@ -245,7 +245,7 @@ coordinates:
 <plugin>
     <groupId>com.btmatthews.maven.plugins</groupId>
     <artifactId>emailserver-maven-plugin</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
 </plugin>
 ```
 
