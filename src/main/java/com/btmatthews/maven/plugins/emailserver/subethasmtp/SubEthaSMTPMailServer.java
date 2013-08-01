@@ -40,6 +40,7 @@ public final class SubEthaSMTPMailServer extends AbstractMailServer {
      *
      * @param logger Used to log error messages.
      */
+    @Override
     public void start(final Logger logger) {
         logInfo(logger, "com.btmatthews.maven.plugin.emailserver.subethasmtp.starting");
         final MessageHandlerFactory messageHandlerFactory = new SimpleMessageHandlerFactory();
@@ -60,12 +61,22 @@ public final class SubEthaSMTPMailServer extends AbstractMailServer {
      *
      * @param logger Used to log error messages.
      */
+    @Override
     public void stop(final Logger logger) {
         logInfo(logger, "com.btmatthews.maven.plugin.emailserver.subethasmtp.stopping");
         if (server != null) {
             server.stop();
-            server = null;
         }
         logInfo(logger, "com.btmatthews.maven.plugin.emailserver.subethasmtp.stopped");
+    }
+
+    @Override
+    public boolean isStarted(final Logger logger) {
+        return server.isRunning();
+    }
+
+    @Override
+    public boolean isStopped(final Logger logger) {
+        return !server.isRunning();
     }
 }

@@ -41,6 +41,7 @@ public final class GreenmailMailServer extends AbstractMailServer {
      *
      * @param logger Used to log error messages.
      */
+    @Override
     public void start(final Logger logger) {
         logInfo(logger, "com.btmatthews.maven.plugin.emailserver.greenmail.starting");
         final ServerSetup[] serverSetups = getServerSetups();
@@ -62,13 +63,23 @@ public final class GreenmailMailServer extends AbstractMailServer {
      *
      * @param logger Used to log error messages.
      */
+    @Override
     public void stop(final Logger logger) {
         logInfo(logger, "com.btmatthews.maven.plugin.emailserver.greenmail.stopping");
         if (greenMail != null) {
             greenMail.stop();
-            greenMail = null;
         }
         logInfo(logger, "com.btmatthews.maven.plugin.emailserver.greenmail.stopped");
+    }
+
+    @Override
+    public boolean isStarted(final Logger logger) {
+        return greenMail.getSmtp().isRunning();
+    }
+
+    @Override
+    public boolean isStopped(final Logger logger) {
+        return !greenMail.getSmtp().isRunning();
     }
 
     /**
