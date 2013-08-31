@@ -2,11 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation=" http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <prerequisites>
-        <maven>3.0.4</maven>
+        <maven>3.1.0</maven>
     </prerequisites>
     <groupId>com.btmatthews.maven.plugins</groupId>
     <artifactId>emailserver-maven-plugin</artifactId>
-    <version>1.1.2-SNAPSHOT</version>
+    <version>2.0.0-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
     <name>e-Mail Server Plugin</name>
     <description>A Maven 3 plug-in that can be used to launch a mail server for use in integration tests.</description>
@@ -91,7 +91,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9</version>
+                <version>2.9.1</version>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
@@ -185,12 +185,12 @@
             </plugin>
             <plugin>
                 <artifactId>maven-surefire-report-plugin</artifactId>
-                <version>2.15</version>
+                <version>2.16</version>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>cobertura-maven-plugin</artifactId>
-                <version>2.5.2</version>
+                <version>2.6</version>
                 <configuration>
                     <check>false</check>
                     <quiet>true</quiet>
@@ -202,7 +202,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9</version>
+                <version>2.9.1</version>
             </plugin>
             <plugin>
                 <artifactId>maven-plugin-plugin</artifactId>
@@ -228,7 +228,7 @@
         <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-plugin-api</artifactId>
-            <version>3.0.4</version>
+            <version>3.1.0</version>
         </dependency>
         <dependency>
             <groupId>javax.activation</groupId>
