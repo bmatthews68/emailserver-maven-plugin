@@ -1,6 +1,8 @@
 e-Mail Server Maven Plugin
 ==========================
 
+![Build Status](https://codeship.com/projects/ca952c80-b596-0133-be45-4a56b254b363/status?branch=master)
+
 The [e-Mail Server Maven Plugin](http://emailserver-maven-plugin.btmatthews.com/) is
 a [Maven](http://maven.apache.org) plugin that runs an fake e-mail server in the Maven build life-cycle. The
 plugin typically launches the fake e-mail server as a daemon process during the pre-integration-test phase of the build
